@@ -89,11 +89,11 @@ Upload the whole folder to any static host and open `index.html`. No build or np
 | `ActiveUserKeys` | authenticated read, admin write | user keys, expiry, ban, device binding |
 | `BannedDevices` | admin only | banned device ids |
 | `users` | admin only | registered users / devices |
-| `NOXBHAI@1` | admin only  | locked UI, synced across devices |
+| `vipul@002` | admin only  | locked UI, synced across devices |
 
 ## Security Notes
 
-  mankhushkumar461
+  vipulgaming002
 - Every page verifies the auth state and the admin UID; sessions expire after 24 hours
 - `ActiveUserKeys.boundDeviceId` / `boundDevices` are writable without Firebase auth because the Android app binds devices without signing in. Lock this down once the app uses (anonymous) Firebase Auth
 - Publish rules before testing saves; unsaved or old rules cause `PERMISSION_DENIED` errors
