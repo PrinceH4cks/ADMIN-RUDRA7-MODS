@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLOATING BUTTONS - ADMIN PANEL</title>
+        <link rel="stylesheet" href="css/style.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "firebase/app": "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js",
+            "firebase/analytics": "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js",
+            "firebase/auth": "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js",
+            "firebase/database": "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
+        }
+    }
+    </script>
+    <script>document.documentElement.className += " skel-pending";</script>
+</head>
+<body>
+
+    <div class="bg-decor"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="grid"></div></div>
+
+    <div id="pageSkeleton" class="is-hidden" aria-hidden="true">
+        <div class="skw-main">
+        <div class="skw-topbar">
+            <div class="skw skw-h1" style="width:178px"></div>
+            <div class="skw-topbar-right">
+                <div class="skw skw-chip"><div class="skw skw-av"></div><div class="skw skw-chip-txt"></div></div>
+                <div class="skw skw-exit"></div>
+            </div>
+        </div>
+            <div class="skw-stats">
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+            </div>
+
+            <div class="skw-hero">
+                <div class="skw-hero-top">
+                    <div class="skw-hero-title">
+                        <div class="skw skw-hero-ic"></div>
+                        <div class="skw skw-hero-name"></div>
+                        <div class="skw skw-hero-status"></div>
+                    </div>
+                    <div class="skw skw-fp-toggle"></div>
+                </div>
+                <div class="skw skw-hero-sub"></div>
+                <div class="skw-preview"><div class="skw skw-prev-chip"></div></div>
+            </div>
+
+            <div class="skw-card">
+<div class="skw-card-head"><div class="skw skw-card-ic"></div><div class="skw skw-card-txt w186"></div></div>
+                <div class="skw-form-row">
+                    <div class="skw-fb-left">
+                        <div class="skw skw-fb-box">
+                            <div class="skw skw-fb-lbl"></div>
+                            <div class="skw-fb-body">
+                                <div class="skw skw-pv-badge"></div>
+                                <div class="skw skw-pv-name"></div>
+                            </div>
+                        </div>
+                        <div class="skw-icon-pick">
+                            <div class="skw skw-label w94"></div>
+                            <div class="skw-emoji-row">
+                                <div class="skw skw-emoji"></div><div class="skw skw-emoji"></div><div class="skw skw-emoji"></div><div class="skw skw-emoji"></div><div class="skw skw-emoji"></div><div class="skw skw-emoji"></div><div class="skw skw-emoji"></div><div class="skw skw-emoji"></div><div class="skw skw-emoji"></div><div class="skw skw-emoji"></div>
+                                <div class="skw skw-emoji-input"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="skw skw-label w118"></div>
+                        <div class="skw skw-input"></div>
+                        <div class="skw skw-hint w140"></div>
+                    </div>
+                </div>
+                <div class="skw-btn-row">
+                    <div class="skw skw-btn" style="width:150px"></div>
+                </div>
+            </div>
+
+            <div class="skw-card">
+<div class="skw-card-head"><div class="skw skw-card-ic"></div><div class="skw skw-card-txt w104"></div></div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w56"></div>
+                        <div class="skw skw-t2 w84"></div>
+                        <div class="skw-meta"><div class="skw skw-pill w34"></div><div class="skw skw-pill w46"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w72"></div><div class="skw skw-btn sm w58"></div><div class="skw skw-btn sm w58"></div><div class="skw skw-btn sm w58"></div></div>
+            </div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w44"></div>
+                        <div class="skw skw-t2 w64"></div>
+                        <div class="skw-meta"><div class="skw skw-pill w34"></div><div class="skw skw-pill w46"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w72"></div><div class="skw skw-btn sm w58"></div><div class="skw skw-btn sm w58"></div><div class="skw skw-btn sm w58"></div></div>
+            </div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w56"></div>
+                        <div class="skw skw-t2 w84"></div>
+                        <div class="skw-meta"><div class="skw skw-pill w34"></div><div class="skw skw-pill w46"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w72"></div><div class="skw skw-btn sm w58"></div><div class="skw skw-btn sm w58"></div><div class="skw skw-btn sm w58"></div></div>
+            </div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w38"></div>
+                        <div class="skw skw-t2 w64"></div>
+                        <div class="skw-meta"><div class="skw skw-pill w34"></div><div class="skw skw-pill w46"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w72"></div><div class="skw skw-btn sm w58"></div><div class="skw skw-btn sm w58"></div><div class="skw skw-btn sm w58"></div></div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="icon"><svg class="svg-ic" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8.5 11l2.5 2.5L15.5 8.5" stroke="#fde047" stroke-width="2.4"/></svg></div>
+            <div>
+                <div class="name">RUDRA7 MODS</div>
+                <div class="role">Admin Panel</div>
+            </div>
+        </div>
+
+        <div class="nav-item" data-view="overview"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span class="txt">Overview</span></div>
+        <div class="nav-item" data-view="keys"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.5 12.5 20 3M14 9l3 3M17.5 5.5l3 3"/></svg></span><span class="txt">User Keys</span></div>
+        <div class="nav-item active" data-view="floating"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span><span class="txt">Floating Buttons</span></div>
+
+        <div class="nav-item" data-view="notifications"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><span class="txt">Notifications</span></div>
+        <div class="nav-item" data-view="settings"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg></span><span class="txt">Settings</span><span class="nav-arrow">▾</span></div>
+        <div class="nav-sub" id="settingsSub">
+            <div class="nav-sub-item" onclick="window.location.href='settings.html'"><svg class="svg-ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2M9 10h6M9 14h6M9 18h4"/></svg> Site Settings</div>
+        </div>
+
+        <div class="side-user"><div class="su-av">A</div><div class="su-meta"><div class="su-label">Administrator</div><div class="su-email">admin@panel</div></div></div>
+        <button class="logout" id="logoutBtn">LOGOUT</button>
+    </aside>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mnav-group">
+        <div class="m-item" data-view="overview"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>Home</div>
+        <div class="m-item" data-view="keys"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.5 12.5 20 3M14 9l3 3M17.5 5.5l3 3"/></svg></span>Keys</div>
+        <div class="m-item active" data-view="floating"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span>Float</div>
+        </div>
+        <span class="mnav-div"></span>
+        <div class="mnav-group nav-group-alt">
+
+        <div class="m-item" data-view="notifications"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>Notif</div>
+        <div class="m-item" data-view="settings"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg></span>Settings</div>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="topbar">
+            <h1 id="pageTitle"><svg class="svg-ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg> Floating Buttons</h1>
+            <div class="topbar-right">
+                <div class="user-chip" id="adminEmail"><span class="uc-av">A</span><span class="uc-name">Admin</span></div>
+                <button class="topbar-exit" onclick="document.getElementById('logoutBtn').click()"><svg class="svg-ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h5M15 16l4-4-4-4M19 12H9"/></svg> EXIT</button>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span><span class="lbl">Total Buttons</span></div>
+                <div class="val" id="statTotal">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lbl">Active (ON)</span></div>
+                <div class="val" id="statOn">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg></span><span class="lbl">Inactive (OFF)</span></div>
+                <div class="val" id="statOff">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg></span><span class="lbl">Panel Status</span></div>
+                <div class="val" id="statPanel" style="font-size:22px;">OFF</div>
+            </div>
+        </div>
+
+<div class="hero-card">
+            <div class="hero-top">
+                <div class="hero-title"><svg class="svg-ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg> Floating Panel <span id="fpStatus" style="font-size:12px; padding:3px 12px; border-radius:999px; background:rgba(239,68,68,0.15); border:1px solid rgba(239,68,68,0.35); color:#f87171; letter-spacing:1px;">OFF</span></div>
+                <button type="button" class="fp-toggle" id="fpToggleBtn" onclick="savePanelToggle()">
+                    <span class="fp-knob"></span>
+                    <span class="fp-label">PANEL OFF</span>
+                </button>
+            </div>
+            <div class="hero-sub">ON = panel dikhega app me, OFF = chhupa hua.</div>
+                <div class="panel-preview" id="fbPreview"><span class="prev-chip prev-off">Pick an icon — your preview appears here</span></div>
+        </div>
+
+<div class="card">
+            <h3><svg class="svg-ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#34d399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg> Add Floating Button</h3>
+            <div class="form-row">
+                <div class="fb-left">
+                    <div class="fb-preview-box">
+                        <div class="fb-pv-label">Live Preview</div>
+                        <div class="fb-pv-body" id="fbLivePreview">
+                            <div class="fb-pv-badge">✔</div>
+                            <div class="fb-pv-name">AIMBOT</div>
+                        </div>
+                    </div>
+                    <div class="icon-pick">
+                        <label>Button Icon</label>
+                        <div class="emoji-row" id="fbEmojiRow">
+                            <button type="button" class="emoji-opt active" data-i="✔" title="Check">✔</button>
+                            <button type="button" class="emoji-opt" data-i="⚡" title="Speed">⚡</button>
+                            <button type="button" class="emoji-opt" data-i="🔥" title="Damage">🔥</button>
+                            <button type="button" class="emoji-opt" data-i="🎯" title="Aimbot">🎯</button>
+                            <button type="button" class="emoji-opt" data-i="💣" title="Explosive">💣</button>
+                            <button type="button" class="emoji-opt" data-i="🛡️" title="Armor">🛡️</button>
+                            <button type="button" class="emoji-opt" data-i="💀" title="Skull">💀</button>
+                            <button type="button" class="emoji-opt" data-i="⭐" title="Star">⭐</button>
+                            <button type="button" class="emoji-opt" data-i="⚔️" title="Swords">⚔️</button>
+                            <button type="button" class="emoji-opt" data-i="☢️" title="Radiation">☢️</button>
+                            <input type="text" id="fbIconInput" maxlength="4" value="✔" placeholder="✍">
+                            <button type="button" class="emoji-all" id="fbEmojiAllBtn" onclick="window.toggleAllEmoji(event)">All +</button>
+                        </div>
+                        <div class="emoji-full" id="fbEmojiFull">
+                            <button type="button" class="emoji-opt" data-i="📍" title="Location">📍</button>
+                            <button type="button" class="emoji-opt" data-i="👁️" title="ESP / Player">👁️</button>
+                            <button type="button" class="emoji-opt" data-i="👤" title="Player">👤</button>
+                            <button type="button" class="emoji-opt" data-i="❤️" title="Health">❤️</button>
+                            <button type="button" class="emoji-opt" data-i="🔫" title="Aimbot">🔫</button>
+                            <button type="button" class="emoji-opt" data-i="🔭" title="Aim FOV">🔭</button>
+                            <button type="button" class="emoji-opt" data-i="🚀" title="Fly">🚀</button>
+                            <button type="button" class="emoji-opt" data-i="🏃" title="Speed Boost">🏃</button>
+                            <button type="button" class="emoji-opt" data-i="🦘" title="Jump">🦘</button>
+                            <button type="button" class="emoji-opt" data-i="🧱" title="Wall">🧱</button>
+                            <button type="button" class="emoji-opt" data-i="👻" title="Invisible">👻</button>
+                            <button type="button" class="emoji-opt" data-i="💥" title="Explosion">💥</button>
+                            <button type="button" class="emoji-opt" data-i="🔄" title="Reset">🔄</button>
+                            <button type="button" class="emoji-opt" data-i="⚙️" title="Settings">⚙️</button>
+                            <button type="button" class="emoji-opt" data-i="🎮" title="Game">🎮</button>
+                            <button type="button" class="emoji-opt" data-i="📱" title="Device">📱</button>
+                            <button type="button" class="emoji-opt" data-i="🔊" title="Sound">🔊</button>
+                            <button type="button" class="emoji-opt" data-i="🎤" title="Microphone">🎤</button>
+                            <button type="button" class="emoji-opt" data-i="📡" title="Network">📡</button>
+                            <button type="button" class="emoji-opt" data-i="📶" title="Ping">📶</button>
+                            <button type="button" class="emoji-opt" data-i="🖥️" title="FPS">🖥️</button>
+                            <button type="button" class="emoji-opt" data-i="📊" title="Statistics">📊</button>
+                            <button type="button" class="emoji-opt" data-i="🔒" title="Lock">🔒</button>
+                            <button type="button" class="emoji-opt" data-i="🔓" title="Unlock">🔓</button>
+                            <button type="button" class="emoji-opt" data-i="✅" title="Enable">✅</button>
+                            <button type="button" class="emoji-opt" data-i="✔" title="Check">✔</button>
+                            <button type="button" class="emoji-opt" data-i="⚡" title="Speed">⚡</button>
+                            <button type="button" class="emoji-opt" data-i="🔥" title="Damage">🔥</button>
+                            <button type="button" class="emoji-opt" data-i="🎯" title="Aimbot">🎯</button>
+                            <button type="button" class="emoji-opt" data-i="🛡️" title="Armor">🛡️</button>
+                            <button type="button" class="emoji-opt" data-i="💣" title="Explosive">💣</button>
+                            <button type="button" class="emoji-opt" data-i="☢️" title="Radiation">☢️</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label>Button Name</label>
+                        <textarea id="fbNameInput" rows="2" placeholder="e.g. AIMBOT"></textarea>
+                    </div>
+                </div>
+                <div class="fb-right">
+                    <div class="fb-urlfield on">
+                        <label>ON URL <span class="mini-tag">ZIP</span></label>
+                        <input type="text" id="fbOnUrl" placeholder="https://.../on.zip">
+                    </div>
+                    <div class="fb-urlfield off">
+                        <label>OFF URL <span class="mini-tag">ZIP</span></label>
+                        <input type="text" id="fbOffUrl" placeholder="https://.../off.zip">
+                    </div>
+                    <div class="fb-saveholder">
+                        <button class="btn fb-save-btn" onclick="addFloatingButton()"><svg class="svg-ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg> ADD BUTTON</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3><svg class="svg-ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg> All Buttons</h3>
+            <div id="fbList"></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modalBody"></div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <a href="developer.html" class="dev-fab" title="Developer Support"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+
+    <script type="module">
+        import { auth, db } from "./js/firebase-config.js";
+        import { onAuthStateChanged, signOut } from "firebase/auth";
+        import { ref, get, set, push, update, remove } from "firebase/database";
+
+        window.auth = auth;
+        window.db = db;
+        window.signOut = signOut;
+        window.ref = ref;
+        window.get = get;
+        window.set = set;
+        window.push = push;
+        window.update = update;
+        window.remove = remove;
+
+        function pickEmoji(btn) {
+            const input = document.getElementById("fbIconInput");
+            if (!input) return;
+            input.value = btn.getAttribute("data-i");
+            document.querySelectorAll(".emoji-opt").forEach(function(b) {
+                b.classList.toggle("active", b === btn);
+            });
+            updateLivePreview();
+        }
+        window.pickEmoji = pickEmoji;
+
+        function updateLivePreview() {
+            const pv = document.getElementById("fbLivePreview");
+            if (!pv) return;
+            const name = (document.getElementById("fbNameInput").value || "AIMBOT").trim() || "Name";
+            const icon = (document.getElementById("fbIconInput").value || "✔").trim() || "✔";
+            pv.innerHTML = "";
+            const b = document.createElement("div");
+            b.className = "fb-pv-badge";
+            b.textContent = icon;
+            const n = document.createElement("div");
+            n.className = "fb-pv-name";
+            n.textContent = name.split("\n")[0];
+            pv.appendChild(b);
+            pv.appendChild(n);
+        }
+        window.updateLivePreview = updateLivePreview;
+        document.getElementById("fbNameInput").addEventListener("input", updateLivePreview);
+        document.getElementById("fbIconInput").addEventListener("input", updateLivePreview);
+        document.getElementById("fbEmojiRow").addEventListener("click", function(e) {
+            const btn = e.target.closest(".emoji-opt");
+            if (btn) pickEmoji(btn);
+        });
+
+        function toggleAllEmoji(ev) {
+            ev.preventDefault();
+            const full = document.getElementById("fbEmojiFull");
+            const btn = document.getElementById("fbEmojiAllBtn");
+            if (!full || !btn) return;
+            const open = full.classList.toggle("open");
+            btn.classList.toggle("open", open);
+            btn.textContent = open ? "All −" : "All +";
+        }
+        window.toggleAllEmoji = toggleAllEmoji;
+        document.getElementById("fbEmojiFull").addEventListener("click", function(e) {
+            const btn = e.target.closest(".emoji-opt");
+            if (btn) pickEmoji(btn);
+        });
+
+function applyAdminChip() {
+            const el = document.querySelector("#adminEmail .uc-name");
+            const isMobile = window.matchMedia("(max-width: 900px)").matches || window.matchMedia("(pointer: coarse)").matches;
+            if (el) el.innerText = isMobile ? "Admin" : (window.adminEmailAddr || "");
+        }
+        window.applyAdminChip = applyAdminChip;
+        window.addEventListener("resize", applyAdminChip);
+
+        onAuthStateChanged(auth, function(user) {
+            if (!user) {
+                window.location.href = "index.html";
+                return;
+            }
+            const loginTime = parseInt(localStorage.getItem("adminLoginTime") || "0", 10);
+            if (!loginTime) {
+                localStorage.setItem("adminLoginTime", String(Date.now()));
+            } else if (Date.now() - loginTime > 24 * 60 * 60 * 1000) {
+                signOut(auth).then(function() {
+                    sessionStorage.removeItem("adminLoggedIn");
+                    localStorage.removeItem("adminLoginTime");
+                    window.location.href = "index.html";
+                });
+                return;
+            }
+            window.adminEmailAddr = user.email;
+            applyAdminChip();
+            loadFloatingButtons();
+        });
+
+        document.getElementById("logoutBtn").addEventListener("click", function() {
+            signOut(auth).then(function() {
+                sessionStorage.removeItem("adminLoggedIn");
+                window.location.href = "index.html";
+            });
+        });
+
+        document.querySelectorAll(".nav-item, .m-item").forEach(function(item) {
+            item.addEventListener("click", function() {
+                var view = item.dataset.view;
+                if (view === "logout") {
+                    document.getElementById("logoutBtn").click();
+                    return;
+                }
+                if (view === "floating") return;
+if (view === "keys") {
+                    window.location.href = "keys.html";
+                    return;
+                }
+                if (view === "notifications") {
+                    window.location.href = "notifications.html";
+                    return;
+                }
+                if (view === "settings") {
+if (item.classList.contains("m-item")) {
+                        window.location.href = "settings.html";
+                        return;
+                    }
+                    item.classList.toggle("open");
+                    return;
+                }
+                window.location.href = "dashboard.html?view=" + view;
+            });
+        });
+
+        function showToast(msg, isError) {
+            const toast = document.getElementById("toast");
+            toast.innerText = msg;
+            toast.className = "toast" + (isError ? " error" : "");
+            toast.style.display = "flex";
+            toast.style.animation = "none";
+            void toast.offsetWidth;
+            toast.style.animation = "";
+            setTimeout(function() { toast.style.display = "none"; }, 2600);
+        }
+        window.showToast = showToast;
+
+        function esc(s) {
+            return String(s || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+        window.esc = esc;
+
+        function jsStr(s) {
+            return String(s || "").replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+        }
+        window.jsStr = jsStr;
+
+        function closeModal() {
+            document.getElementById("modalOverlay").classList.remove("show");
+        }
+        window.closeModal = closeModal;
+
+        function loadFloatingButtons() {
+            const list = document.getElementById("fbList");
+            list.innerHTML = '<div class="empty-state">Loading...</div>';
+            get(ref(db, "floatingButtons")).then(function(snap) {
+                window.markSkeletonSettled && window.markSkeletonSettled();
+if (!snap.exists()) {
+                    applyFpButton(false);
+                    document.getElementById("fpStatus").innerText = "OFF";
+                    document.getElementById("fpStatus").style.background = "rgba(239,68,68,0.15)";
+                    document.getElementById("fpStatus").style.borderColor = "rgba(239,68,68,0.35)";
+                    document.getElementById("fpStatus").style.color = "#f87171";
+                    document.getElementById("statPanel").innerText = "OFF";
+                    document.getElementById("statPanel").style.background = "linear-gradient(135deg,#f87171,#ef4444)";
+                    document.getElementById("statPanel").style.webkitBackgroundClip = "text";
+                    document.getElementById("statPanel").style.webkitTextFillColor = "transparent";
+                    setStats(0, 0, 0);
+                    list.innerHTML = '<div class="empty-state"><svg class="svg-ic" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block; margin:0 auto 10px; opacity:0.7;"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>No buttons yet. Add one above.</div>';
+                    return;
+                }
+const data = snap.val();
+                const enabled = data.enabled === true;
+                applyFpButton(enabled);
+                document.getElementById("fpStatus").innerText = enabled ? "ON" : "OFF";
+                document.getElementById("fpStatus").style.background = enabled ? "rgba(16,185,129,0.15)" : "rgba(239,68,68,0.15)";
+                document.getElementById("fpStatus").style.borderColor = enabled ? "rgba(16,185,129,0.35)" : "rgba(239,68,68,0.35)";
+                document.getElementById("fpStatus").style.color = enabled ? "#10b981" : "#f87171";
+                document.getElementById("statPanel").innerText = enabled ? "ON" : "OFF";
+                document.getElementById("statPanel").style.background = enabled ? "linear-gradient(135deg,#34d399,#10b981)" : "linear-gradient(135deg,#f87171,#ef4444)";
+                document.getElementById("statPanel").style.webkitBackgroundClip = "text";
+                document.getElementById("statPanel").style.webkitTextFillColor = "transparent";
+
+                const btns = data.buttons || {};
+                const arr = Object.keys(btns).map(function(key) {
+                    return { key: key, data: btns[key] || {} };
+                });
+                arr.sort(function(a, b) {
+                    const oa = (a.data && typeof a.data.order === "number") ? a.data.order : Number.MAX_SAFE_INTEGER;
+                    const ob = (b.data && typeof b.data.order === "number") ? b.data.order : Number.MAX_SAFE_INTEGER;
+                    if (oa !== ob) return oa - ob;
+                    return a.key < b.key ? -1 : 1;
+                });
+
+                const total = arr.length;
+                const onCount = arr.filter(function(e) { return e.data.enabled !== false; }).length;
+                setStats(total, onCount, total - onCount);
+
+                list.innerHTML = "";
+                if (!arr.length) {
+                    list.innerHTML = '<div class="empty-state"><svg class="svg-ic" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block; margin:0 auto 10px; opacity:0.7;"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>No buttons yet. Add one above.</div>';
+                    return;
+                }
+
+                const prev = document.getElementById("fbPreview");
+                if (prev) {
+                    const actArr = arr.filter(function(e) { return e.data.enabled !== false; });
+                    prev.innerHTML = "";
+                    if (!actArr.length) {
+                        prev.innerHTML = '<span class="prev-chip prev-off">Panel OFF — no active button</span>';
+                    } else {
+                        actArr.slice(0, 5).forEach(function(e) {
+                            const ic = e.data.icon || "✔";
+                            const chip = document.createElement("span");
+                            chip.className = "prev-chip";
+                            chip.innerHTML = '<span class="prev-ic">' + esc(ic) + '</span><span class="prev-txt">' + esc(String(e.data.name || "Untitled").split("\n")[0]) + '</span>';
+                            prev.appendChild(chip);
+                        });
+                        if (actArr.length > 5) {
+                            const more = document.createElement("span");
+                            more.className = "prev-chip prev-more";
+                            more.textContent = "+" + (actArr.length - 5);
+                            prev.appendChild(more);
+                        }
+                    }
+                }
+
+                arr.forEach(function(entry, i) {
+                    const key = entry.key;
+                    const d = entry.data;
+                    const pos = i + 1;
+                    const isOn = d.enabled !== false;
+                    const st = isOn
+                        ? '<span class="key-status key-good">ON</span>'
+                        : '<span class="key-status key-bad">OFF</span>';
+const item = document.createElement("div");
+                    item.className = "list-item";
+                    item.style.animationDelay = (i * 0.05) + "s";
+                    const btnIcon = d.icon || "";
+                    item.innerHTML =
+                        '<div class="info">' +
+                        '<div class="thumb">' + (btnIcon
+                            ? '<span class="btn-emoji">' + esc(btnIcon) + '</span>'
+                            : (isOn
+                                ? '<svg class="svg-ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>'
+                                : '<svg class="svg-ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5 12h14"/></svg>')) + '</div>' +
+                        '<div style="min-width:0; flex:1;">' +
+                        '<div class="fb-name-row"><span class="pos-badge">#' + pos + '</span><span class="t1" style="font-size:14px;">' + esc(d.name || "Untitled") + '</span>' + st + '</div>' +
+                        '<div class="url-box"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>ON: ' + esc(d.onUrl || d.url || "No URL") + '</div>' +
+                        '<div class="url-box"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>OFF: ' + esc(d.offUrl || "No URL") + '</div></div>' +
+                        '<label class="switch" title="Toggle ON / OFF"><input type="checkbox" ' + (isOn ? 'checked' : '') + ' onchange="toggleFloatingButton(\'' + jsStr(key) + '\')"><span class="slider"></span></label>' +
+                        '</div>' +
+                        '<div class="actions">' +
+                        '<button class="btn btn-ghost btn-small" title="Move up" onclick="moveFloatingButton(\'' + jsStr(key) + '\',-1)"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>' +
+                        '<button class="btn btn-ghost btn-small" title="Move down" onclick="moveFloatingButton(\'' + jsStr(key) + '\',1)"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>' +
+                        '<button class="btn btn-small" onclick="editFloatingButton(\'' + jsStr(key) + '\')"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg> EDIT</button>' +
+                        '<button class="btn btn-red btn-small" onclick="deleteFloatingButton(\'' + jsStr(key) + '\')"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg> DELETE</button>' +
+                        '</div>';
+                    list.appendChild(item);
+                });
+            }).catch(function() {
+                list.innerHTML = '<div class="empty-state">Error loading buttons.</div>';
+            });
+        }
+        window.loadFloatingButtons = loadFloatingButtons;
+
+        function setStats(total, onCount, offCount) {
+            document.getElementById("statTotal").innerText = total;
+            document.getElementById("statOn").innerText = onCount;
+            document.getElementById("statOff").innerText = offCount;
+        }
+        window.setStats = setStats;
+
+function applyFpButton(enabled) {
+            window._fpEnabled = enabled === true;
+            const btn = document.getElementById("fpToggleBtn");
+            const lbl = document.querySelector("#fpToggleBtn .fp-label");
+            if (btn) btn.classList.toggle("on", window._fpEnabled);
+            if (lbl) lbl.textContent = window._fpEnabled ? "PANEL ON" : "PANEL OFF";
+        }
+        window.applyFpButton = applyFpButton;
+
+        function savePanelToggle() {
+            const enabled = !window._fpEnabled;
+            applyFpButton(enabled);
+            document.getElementById("fpStatus").innerText = enabled ? "ON" : "OFF";
+            document.getElementById("fpStatus").style.background = enabled ? "rgba(16,185,129,0.15)" : "rgba(239,68,68,0.15)";
+            document.getElementById("fpStatus").style.borderColor = enabled ? "rgba(16,185,129,0.35)" : "rgba(239,68,68,0.35)";
+            document.getElementById("fpStatus").style.color = enabled ? "#10b981" : "#f87171";
+            document.getElementById("statPanel").innerText = enabled ? "ON" : "OFF";
+            document.getElementById("statPanel").style.background = enabled ? "linear-gradient(135deg,#34d399,#10b981)" : "linear-gradient(135deg,#f87171,#ef4444)";
+            document.getElementById("statPanel").style.webkitBackgroundClip = "text";
+            document.getElementById("statPanel").style.webkitTextFillColor = "transparent";
+            set(ref(db, "floatingButtons/enabled"), enabled)
+                .then(function() {
+                    showToast("Floating panel " + (enabled ? "ON" : "OFF") + "!");
+                })
+                .catch(function() { showToast("Error saving!", true); });
+        }
+        window.savePanelToggle = savePanelToggle;
+
+function addFloatingButton() {
+            const name = document.getElementById("fbNameInput").value.trim();
+            const onUrl = document.getElementById("fbOnUrl").value.trim();
+            const offUrl = document.getElementById("fbOffUrl").value.trim();
+            const icon = document.getElementById("fbIconInput").value.trim() || "✔";
+            if (!name) { showToast("Button name is required!", true); return; }
+            if (!onUrl) { showToast("ON ZIP URL is required!", true); return; }
+            if (!offUrl) { showToast("OFF ZIP URL is required!", true); return; }
+            const newRef = push(ref(db, "floatingButtons/buttons"));
+            set(newRef, { name: name, onUrl: onUrl, offUrl: offUrl, icon: icon, enabled: true, order: Date.now() })
+                .then(function() {
+                    showToast("Button saved!");
+                    document.getElementById("fbNameInput").value = "";
+                    document.getElementById("fbOnUrl").value = "";
+                    document.getElementById("fbOffUrl").value = "";
+                    document.getElementById("fbIconInput").value = "✔";
+                    updateLivePreview();
+                    loadFloatingButtons();
+                })
+                .catch(function() { showToast("Error saving button!", true); });
+        }
+        window.addFloatingButton = addFloatingButton;
+
+        function toggleFloatingButton(key) {
+            get(ref(db, "floatingButtons/buttons/" + key)).then(function(snap) {
+                const d = snap.val() || {};
+                const next = d.enabled === false ? true : false;
+                update(ref(db, "floatingButtons/buttons/" + key), { enabled: next })
+                    .then(function() {
+                        showToast(next ? "Button ON!" : "Button OFF!");
+                        loadFloatingButtons();
+                    })
+                    .catch(function() { showToast("Error!", true); });
+            });
+        }
+        window.toggleFloatingButton = toggleFloatingButton;
+
+        function editFloatingButton(key) {
+            get(ref(db, "floatingButtons/buttons/" + key)).then(function(snap) {
+                const data = snap.val() || {};
+                document.getElementById("modalBody").innerHTML =
+'<h3>Edit Button</h3>' +
+'<div class="form-row"><div><label>Button Name</label><textarea id="mFbName" rows="2">' + esc(data.name) + '</textarea></div></div>' +
+                    '<div class="form-row"><div><label>Button Icon</label><input type="text" id="mFbIcon" maxlength="4" value="' + esc(data.icon || "✔") + '"></div></div>' +
+                    '<div class="form-row"><div><label>ON URL (ZIP)</label><input type="text" id="mFbOnUrl" value="' + esc(data.onUrl || data.url || "") + '"></div></div>' +
+                    '<div class="form-row"><div><label>OFF URL (ZIP)</label><input type="text" id="mFbOffUrl" value="' + esc(data.offUrl || "") + '"></div></div>' +
+                    '<div style="display: flex; gap: 10px; justify-content: flex-end;">' +
+                    '<button class="btn btn-red btn-small" onclick="closeModal()">CANCEL</button>' +
+                    '<button class="btn btn-small" onclick="saveFloatingButtonEdit(\'' + jsStr(key) + '\')">SAVE</button></div>';
+                document.getElementById("modalOverlay").classList.add("show");
+            });
+        }
+        window.editFloatingButton = editFloatingButton;
+
+        function saveFloatingButtonEdit(key) {
+const name = document.getElementById("mFbName").value.trim();
+            const onUrl = document.getElementById("mFbOnUrl").value.trim();
+            const offUrl = document.getElementById("mFbOffUrl").value.trim();
+            const icon = document.getElementById("mFbIcon").value.trim() || "✔";
+            if (!name) { showToast("Button name is required!", true); return; }
+            if (!onUrl) { showToast("ON ZIP URL is required!", true); return; }
+            if (!offUrl) { showToast("OFF ZIP URL is required!", true); return; }
+            update(ref(db, "floatingButtons/buttons/" + key), { name: name, onUrl: onUrl, offUrl: offUrl, icon: icon })
+                .then(function() {
+                    showToast("Button updated!");
+                    closeModal();
+                    loadFloatingButtons();
+                })
+                .catch(function() { showToast("Error!", true); });
+        }
+        window.saveFloatingButtonEdit = saveFloatingButtonEdit;
+
+        function randomCode() {
+            const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+            let s = "";
+            for (let i = 0; i < 6; i++) s += chars.charAt(Math.floor(Math.random() * chars.length));
+            return s;
+        }
+
+function deleteFloatingButton(key) {
+            const code = randomCode();
+            document.getElementById("modalBody").innerHTML =
+                '<h3>Confirm Delete</h3>' +
+                '<div class="field-hint" style="margin-bottom:12px;">The button will be deleted. Copy the code below and type it:</div>' +
+                '<div style="text-align:center; font-size:24px; font-weight:900; letter-spacing:6px; font-family:Consolas,monospace; color:#22d3ee; background:rgba(34,211,238,0.1); border:1px dashed rgba(34,211,238,0.4); border-radius:12px; padding:14px; margin-bottom:14px; user-select:all;">' + code + '</div>' +
+                '<label>Type / paste the code</label>' +
+                '<input type="text" id="deleteCodeInput" placeholder="Type the code here" style="margin-bottom:14px;">' +
+                '<div style="display:flex; gap:10px; justify-content:flex-end;">' +
+                '<button class="btn btn-small" onclick="closeModal()">CANCEL</button>' +
+                '<button class="btn btn-red btn-small" onclick="confirmFloatingButtonDelete(\'' + jsStr(key) + '\',\'' + code + '\')">DELETE</button>' +
+                '</div>';
+            document.getElementById("modalOverlay").classList.add("show");
+            setTimeout(function() {
+                const inp = document.getElementById("deleteCodeInput");
+                if (inp) inp.focus();
+            }, 100);
+        }
+        window.deleteFloatingButton = deleteFloatingButton;
+
+        function confirmFloatingButtonDelete(key, code) {
+            const typed = (document.getElementById("deleteCodeInput").value || "").trim().toUpperCase();
+            if (typed !== code) {
+                showToast("Wrong code! Delete cancelled.", true);
+                return;
+            }
+            closeModal();
+            remove(ref(db, "floatingButtons/buttons/" + key)).then(function() {
+                showToast("Button deleted!");
+                loadFloatingButtons();
+            }).catch(function() { showToast("Error!", true); });
+        }
+        window.confirmFloatingButtonDelete = confirmFloatingButtonDelete;
+
+        function orderOf(data, key) {
+            return (data && typeof data.order === "number") ? data.order : Number.MAX_SAFE_INTEGER;
+        }
+
+        function moveFloatingButton(key, dir) {
+            get(ref(db, "floatingButtons/buttons")).then(function(snap) {
+                if (!snap.exists()) return;
+                const btns = snap.val();
+                const sorted = Object.keys(btns).sort(function(a, b) {
+                    const oa = orderOf(btns[a], a);
+                    const ob = orderOf(btns[b], b);
+                    if (oa !== ob) return oa - ob;
+                    return a < b ? -1 : 1;
+                });
+                const idx = sorted.indexOf(key);
+                const newIdx = idx + dir;
+                if (idx < 0 || newIdx < 0 || newIdx >= sorted.length) { showToast("Already at edge!", true); return; }
+                const tmp = sorted[idx];
+                sorted[idx] = sorted[newIdx];
+                sorted[newIdx] = tmp;
+                const updates = {};
+                sorted.forEach(function(k, i) {
+                    updates["floatingButtons/buttons/" + k + "/order"] = i + 1;
+                });
+                update(ref(db), updates)
+                    .then(function() {
+                        showToast("Order updated!");
+                        loadFloatingButtons();
+                    })
+                    .catch(function() { showToast("Error!", true); });
+            });
+        }
+window.moveFloatingButton = moveFloatingButton;
+    </script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

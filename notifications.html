@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN PANEL</title>
+        <link rel="stylesheet" href="css/style.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "firebase/app": "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js",
+            "firebase/analytics": "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js",
+            "firebase/auth": "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js",
+            "firebase/database": "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
+        }
+    }
+    </script>
+    <script>document.documentElement.className += " skel-pending";</script>
+</head>
+<body>
+
+    <div class="bg-decor"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="grid"></div></div>
+
+    <div id="pageSkeleton" class="is-hidden" aria-hidden="true">
+        <div class="skw-main">
+        <div class="skw-topbar">
+            <div class="skw skw-h1" style="width:168px"></div>
+            <div class="skw-topbar-right">
+                <div class="skw skw-chip"><div class="skw skw-av"></div><div class="skw skw-chip-txt"></div></div>
+                <div class="skw skw-exit"></div>
+            </div>
+        </div>
+            <div class="skw-stats c5">
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+            </div>
+
+            <div class="skw-card">
+<div class="skw-card-head"><div class="skw skw-card-ic"></div><div class="skw skw-card-txt w186"></div></div>
+                <div class="skw-form-row">
+                    <div>
+                        <div class="skw skw-label w44"></div>
+                        <div class="skw skw-input"></div>
+                        <div class="skw skw-hint w94pct"></div>
+                    </div>
+                    <div>
+                        <div class="skw skw-label w44"></div>
+                        <div class="skw skw-cs"></div>
+                        <div class="skw skw-hint w94pct"></div>
+                    </div>
+                </div>
+                <div class="skw-form-row">
+                    <div>
+                        <div class="skw skw-label w72"></div>
+                        <div class="skw skw-textarea"></div>
+                        <div class="skw skw-hint w94pct"></div>
+                    </div>
+                </div>
+                <div class="skw-form-row">
+                    <div>
+                        <div class="skw skw-label w142"></div>
+                        <div class="skw skw-input"></div>
+                        <div class="skw skw-hint w94pct"></div>
+                    </div>
+                </div>
+                <div class="skw-icon-pick">
+                    <div class="skw skw-label w118"></div>
+                    <div class="skw-emoji-row">
+                        <div class="skw skw-emoji"></div><div class="skw skw-emoji"></div><div class="skw skw-emoji"></div><div class="skw skw-emoji"></div><div class="skw skw-emoji"></div><div class="skw skw-emoji"></div><div class="skw skw-emoji"></div><div class="skw skw-emoji"></div><div class="skw skw-emoji"></div><div class="skw skw-emoji"></div>
+                        <div class="skw skw-emoji-input"></div>
+                    </div>
+                    <div class="skw skw-hint w94pct" style="margin-top:8px"></div>
+                </div>
+                <div class="skw skw-notif-preview">
+                    <div class="skw skw-np-ic"></div>
+                    <div class="skw-np-l">
+                        <div class="skw skw-np-t"></div>
+                        <div class="skw skw-np-b"></div>
+                        <div class="skw skw-np-b w62"></div>
+                    </div>
+                </div>
+                <div class="skw skw-hint w94pct" style="height:20px;margin:10px 0 14px"></div>
+                <div class="skw-btn-row">
+                    <div class="skw skw-btn" style="width:168px"></div>
+                </div>
+            </div>
+
+            <div class="skw-card">
+<div class="skw-card-head"><div class="skw skw-card-ic"></div><div class="skw skw-card-txt w150"></div></div>
+                <div class="skw-key-bar">
+                    <div class="skw-filters">
+                    <div class="skw skw-filter w58"></div>
+                    <div class="skw skw-filter w70"></div>
+                    <div class="skw skw-filter w58"></div>
+                    <div class="skw skw-filter w58"></div>
+                    </div>
+                    <div class="skw-sort"><div class="skw skw-sort-lbl"></div><div class="skw skw-sort-select"></div></div>
+                </div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w56"></div>
+                        <div class="skw skw-t2 w84"></div>
+                        <div class="skw-meta"><div class="skw skw-pill w64"></div><div class="skw skw-pill w46"></div><div class="skw skw-pill w34"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w72"></div><div class="skw skw-btn sm w58"></div><div class="skw skw-btn sm w58"></div></div>
+            </div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w44"></div>
+                        <div class="skw skw-t2 w84"></div>
+                        <div class="skw-meta"><div class="skw skw-pill w64"></div><div class="skw skw-pill w46"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w72"></div><div class="skw skw-btn sm w58"></div><div class="skw skw-btn sm w58"></div></div>
+            </div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w56"></div>
+                        <div class="skw skw-t2 w64"></div>
+                        <div class="skw-meta"><div class="skw skw-pill w64"></div><div class="skw skw-pill w46"></div><div class="skw skw-pill w34"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w72"></div><div class="skw skw-btn sm w58"></div><div class="skw skw-btn sm w58"></div></div>
+            </div>
+                <div class="skw skw-list-count"></div>
+            </div>
+        </div>
+    </div>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="icon"><svg class="svg-ic" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8.5 11l2.5 2.5L15.5 8.5" stroke="#fde047" stroke-width="2.4"/></svg></div>
+            <div>
+                <div class="name">RUDRA7 MODS</div>
+                <div class="role">Admin Panel</div>
+            </div>
+        </div>
+
+        <a class="nav-item" href="dashboard.html"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span class="txt">Overview</span></a>
+        <a class="nav-item" href="keys.html"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.5 12.5 20 3M14 9l3 3M17.5 5.5l3 3"/></svg></span><span class="txt">User Keys</span></a>
+        <a class="nav-item" href="floating.html"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span><span class="txt">Floating Buttons</span></a>
+
+        <a class="nav-item active" href="notifications.html"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><span class="txt">Notifications</span></a>
+        <a class="nav-item" href="settings.html"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg></span><span class="txt">Settings</span></a>
+        <a class="nav-item" href="developer.html"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><span class="txt">Developer</span></a>
+
+        <div class="side-user"><div class="su-av">A</div><div class="su-meta"><div class="su-label">Administrator</div><div class="su-email">admin@panel</div></div></div>
+        <button class="logout" id="logoutBtn">LOGOUT</button>
+    </aside>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mnav-group">
+        <a class="m-item" href="dashboard.html"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>Home</a>
+        <a class="m-item" href="keys.html"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.5 12.5 20 3M14 9l3 3M17.5 5.5l3 3"/></svg></span>Keys</a>
+        <a class="m-item" href="floating.html"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span>Float</a>
+        </div>
+        <span class="mnav-div"></span>
+        <div class="mnav-group nav-group-alt">
+
+        <a class="m-item active" href="notifications.html"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>Notif</a>
+        <a class="m-item" href="settings.html"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg></span>Settings</a>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="topbar">
+            <h1 id="pageTitle"><svg class="svg-ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg> Notifications</h1>
+            <div class="topbar-right">
+                <div class="user-chip" id="adminEmail"><span class="uc-av">A</span><span class="uc-name">Admin</span></div>
+                <button class="topbar-exit" onclick="document.getElementById('logoutBtn').click()"><svg class="svg-ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h5M15 16l4-4-4-4M19 12H9"/></svg> EXIT</button>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><span class="lbl">Total Notifications</span></div>
+                <div class="val" id="statNotifTotal">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></span><span class="lbl">Active Now</span></div>
+                <div class="val" id="statNotifActive" style="font-size: 22px;">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span><span class="lbl">Sent Today</span></div>
+                <div class="val" id="statNotifToday">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span><span class="lbl">Total Views</span></div>
+                <div class="val" id="statNotifViews" style="font-size: 22px;">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></span><span class="lbl">Total Clicks</span></div>
+                <div class="val" id="statNotifClicks" style="font-size: 22px;">0</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3><svg class="svg-ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg> Send Notification</h3>
+            <div class="form-row">
+                <div>
+                    <label>Title</label>
+                    <input type="text" id="notifTitle" maxlength="40" placeholder="e.g. App Update v2 Released">
+                    <div class="field-hint">Notification heading — shown at the top in the app.</div>
+                </div>
+                <div>
+                    <label>Type</label>
+                    <div class="custom-select">
+                        <button type="button" class="cs-trigger" onclick="toggleNotifTypeDropdown()">
+                            <span class="cs-value" id="notifTypeValue">Update</span>
+                            <span class="cs-arrow">▾</span>
+                        </button>
+                        <div class="cs-menu" id="notifTypeMenu"></div>
+                    </div>
+                    <div class="field-hint">Update / Info / Alert — sets the badge color in the app.</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label>Message</label>
+                    <textarea id="notifBody" rows="3" maxlength="400" placeholder="e.g. New update available! Enjoy new features."></textarea>
+                    <div class="field-hint">Shown to all users.</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label>On Tap Link (optional)</label>
+                    <input type="text" id="notifLink" placeholder="https://example.com/page">
+                    <div class="field-hint">Tapping the notification opens this link in the browser. Leave empty to open the app on tap.</div>
+                </div>
+            </div>
+            <div>
+                <label>Notification Icon</label>
+                <div class="icon-pick">
+                    <div class="emoji-row">
+                        <button type="button" class="emoji-opt active" data-i="🔔">🔔</button>
+                        <button type="button" class="emoji-opt" data-i="📢">📢</button>
+                        <button type="button" class="emoji-opt" data-i="⚡">⚡</button>
+                        <button type="button" class="emoji-opt" data-i="🔥">🔥</button>
+                        <button type="button" class="emoji-opt" data-i="🎯">🎯</button>
+                        <button type="button" class="emoji-opt" data-i="💣">💣</button>
+                        <button type="button" class="emoji-opt" data-i="🛡️">🛡️</button>
+                        <button type="button" class="emoji-opt" data-i="⭐">⭐</button>
+                        <button type="button" class="emoji-opt" data-i="⚔️">⚔️</button>
+                        <button type="button" class="emoji-opt" data-i="✅">✅</button>
+                        <button type="button" class="emoji-opt" data-i="⚠️">⚠️</button>
+                        <button type="button" class="emoji-opt" data-i="🔒">🔒</button>
+                        <input type="text" id="notifIconInput" maxlength="4" value="🔔" placeholder="✍">
+                    </div>
+                </div>
+                <div class="field-hint">Icon shown next to the notification in the app. Pick one or type your own.</div>
+            </div>
+            <div class="panel-preview" id="notifPreview">
+                <span style="font-size:20px; line-height:1; flex-shrink:0;" id="previewIcon">🔔</span>
+                <div style="min-width:0; flex:1;">
+                    <div style="font-size:13px; font-weight:800; color:#fff; line-height:1.4;" id="previewTitle">Your title appears here</div>
+                    <div style="font-size:11.5px; color:var(--muted); margin-top:2px; word-break:break-word; line-height:1.4;" id="previewBody">Your message appears here</div>
+                </div>
+            </div>
+            <div class="field-hint" style="margin:10px 0 14px; line-height:1.5;">Note: Notifications appear when the app is active (floating panel on). Online users get them instantly — offline users see them on next open (while active). <b style="color:#38bdf8;">Views</b> (devices that saw it) and <b style="color:#a5b4ff;">Clicks</b> (taps on it) are auto-counted from the app.</div>
+            <button class="btn" onclick="sendNotification()"><svg class="svg-ic" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4 20-7z"/><path d="M22 2 11 13"/></svg> Send to All Users</button>
+        </div>
+
+        <div class="card">
+            <h3><svg class="svg-ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fb923c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg> Sent Notifications</h3>
+            <div class="key-bar">
+                <div class="key-filters">
+                    <button class="key-filter active" data-cat="all" onclick="filterNotifs('all')">All</button>
+                    <button class="key-filter" data-cat="update" onclick="filterNotifs('update')">Update</button>
+                    <button class="key-filter" data-cat="info" onclick="filterNotifs('info')">Info</button>
+                    <button class="key-filter" data-cat="alert" onclick="filterNotifs('alert')">Alert</button>
+                </div>
+                <div class="sort-wrap">
+                    <span class="sort-label">Filter</span>
+                    <select class="sort-select" id="notifStateSelect" onchange="filterNotifs('state:' + this.value)">
+                        <option value="all">Active + Inactive</option>
+                        <option value="active">Active only</option>
+                        <option value="inactive">Inactive only</option>
+                    </select>
+                </div>
+            </div>
+            <div id="notifList"></div>
+            <div id="notifCount" class="list-count"></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modalBody"></div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <a href="developer.html" class="dev-fab" title="Developer Support"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+
+    <script type="module">
+        import { auth, db } from "./js/firebase-config.js";
+        import { onAuthStateChanged, signOut } from "firebase/auth";
+        import { ref, get, set, push, remove, update } from "firebase/database";
+
+        window.auth = auth;
+        window.db = db;
+        window.signOut = signOut;
+        window.ref = ref;
+        window.get = get;
+        window.set = set;
+        window.push = push;
+        window.remove = remove;
+        window.update = update;
+
+        let notifList = [];
+        let notifFilter = "all";
+
+        const NOTIF_TYPES = [
+            { value: "update", label: "Update", icon: "🔄", color: "#38bdf8" },
+            { value: "info", label: "Info", icon: "ℹ️", color: "#a5b4ff" },
+            { value: "alert", label: "Alert", icon: "⚠️", color: "#f87171" }
+        ];
+
+        function esc(s) {
+            return String(s == null ? "" : s)
+                .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+        }
+
+        function pickNotifEmoji(btn) {
+            const input = document.getElementById("notifIconInput");
+            if (!input) return;
+            input.value = btn.getAttribute("data-i");
+            document.querySelectorAll(".emoji-opt").forEach(function(b) {
+                b.classList.toggle("active", b === btn);
+            });
+            updateNotifPreview();
+        }
+        window.pickNotifEmoji = pickNotifEmoji;
+        document.querySelector(".emoji-row").addEventListener("click", function(e) {
+            const btn = e.target.closest(".emoji-opt");
+            if (btn) pickNotifEmoji(btn);
+        });
+
+        function updateNotifPreview() {
+            const titleEl = document.getElementById("notifTitle");
+            const bodyEl = document.getElementById("notifBody");
+            const iconEl = document.getElementById("notifIconInput");
+            if (!titleEl || !bodyEl || !iconEl) return;
+            document.getElementById("previewIcon").innerText = iconEl.value.trim() || "🔔";
+            document.getElementById("previewTitle").innerText = titleEl.value.trim() || "Your title appears here";
+            document.getElementById("previewBody").innerText = bodyEl.value.trim() || "Your message appears here";
+        }
+        window.updateNotifPreview = updateNotifPreview;
+        ["notifTitle", "notifBody", "notifIconInput"].forEach(function(id) {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener("input", updateNotifPreview);
+        });
+
+        function applyAdminChip() {
+            const el = document.querySelector("#adminEmail .uc-name");
+            const isMobile = window.matchMedia("(max-width: 900px)").matches || window.matchMedia("(pointer: coarse)").matches;
+            if (el) el.innerText = isMobile ? "Admin" : (window.adminEmailAddr || "");
+        }
+        window.applyAdminChip = applyAdminChip;
+        window.addEventListener("resize", applyAdminChip);
+
+        onAuthStateChanged(auth, function(user) {
+            if (!user) {
+                window.location.href = "index.html";
+                return;
+            }
+            const loginTime = parseInt(localStorage.getItem("adminLoginTime") || "0", 10);
+            if (!loginTime) {
+                localStorage.setItem("adminLoginTime", String(Date.now()));
+            } else if (Date.now() - loginTime > 24 * 60 * 60 * 1000) {
+                signOut(auth).then(function() {
+                    sessionStorage.removeItem("adminLoggedIn");
+                    localStorage.removeItem("adminLoginTime");
+                    window.location.href = "index.html";
+                });
+                return;
+            }
+            window.adminEmailAddr = user.email;
+            applyAdminChip();
+            loadNotifications();
+        });
+
+        document.getElementById("logoutBtn").addEventListener("click", function() {
+            signOut(auth).then(function() {
+                sessionStorage.removeItem("adminLoggedIn");
+                window.location.href = "index.html";
+            });
+        });
+
+        function showToast(msg, isError) {
+            const toast = document.getElementById("toast");
+            toast.innerText = msg;
+            toast.className = "toast" + (isError ? " error" : "");
+            toast.style.display = "flex";
+            toast.style.animation = "none";
+            void toast.offsetWidth;
+            toast.style.animation = "";
+            setTimeout(function() { toast.style.display = "none"; }, 2600);
+        }
+
+        function timeAgo(ts) {
+            if (!ts) return "";
+            const diff = Date.now() - ts;
+            const sec = Math.floor(diff / 1000);
+            if (sec < 60) return "just now";
+            const min = Math.floor(sec / 60);
+            if (min < 60) return min + "m ago";
+            const hr = Math.floor(min / 60);
+            if (hr < 24) return hr + "h ago";
+            const day = Math.floor(hr / 24);
+            if (day < 30) return day + "d ago";
+            return new Date(ts).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+        }
+
+        function typeMeta(value) {
+            const t = NOTIF_TYPES.find(function(x) { return x.value === value; });
+            return t || NOTIF_TYPES[2];
+        }
+
+        function loadNotifications() {
+            const list = document.getElementById("notifList");
+            list.innerHTML = '<div class="empty-state">Loading...</div>';
+            get(ref(db, "notifications")).then(function(snap) {
+                window.markSkeletonSettled && window.markSkeletonSettled();
+                if (!snap.exists()) {
+                    setStats(0, 0, 0);
+                    list.innerHTML = '<div class="empty-state"><svg class="svg-ic" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block; margin:0 auto 10px; opacity:0.7;"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>No notifications sent yet. Send one above — all users will see it in the app.</div>';
+                    document.getElementById("notifCount").innerHTML = "Showing 0 of 0";
+                    return;
+                }
+                const data = snap.val();
+                const arr = [];
+                Object.keys(data).forEach(function(id) {
+                    const n = data[id];
+                    if (!n || typeof n !== "object") return;
+                    arr.push({ id: id, title: n.title || "", body: n.body || "", icon: n.icon || "🔔", type: n.type || "info", time: n.time || 0, active: n.active !== false, link: n.link || "", views: n.views || 0, clicks: n.clicks || 0 });
+                });
+                arr.sort(function(a, b) { return b.time - a.time; });
+                notifList = arr;
+                renderNotifs();
+            }).catch(function() {
+                list.innerHTML = '<div class="empty-state">Failed to load. Try again.</div>';
+            });
+        }
+
+function setStats(total, active, today, views, clicks) {
+    document.getElementById("statNotifTotal").innerText = total;
+    document.getElementById("statNotifActive").innerText = active;
+    document.getElementById("statNotifToday").innerText = today;
+    document.getElementById("statNotifViews").innerText = fmtNum(views);
+    document.getElementById("statNotifClicks").innerText = fmtNum(clicks);
+}
+
+function fmtNum(n) {
+    n = Number(n) || 0;
+    if (n >= 1000000) return (n / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
+    if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, "") + "k";
+    return String(n);
+}
+
+        function renderNotifs() {
+            const list = document.getElementById("notifList");
+            let items = notifList;
+            const stateSel = document.getElementById("notifStateSelect").value;
+            items = items.filter(function(n) {
+                if (stateSel === "active" && !n.active) return false;
+                if (stateSel === "inactive" && n.active) return false;
+                if (notifFilter === "all") return true;
+                return n.type === notifFilter;
+            });
+            const total = notifList.length;
+            const activeCount = notifList.filter(function(n) { return n.active; }).length;
+            const todayStart = new Date();
+            todayStart.setHours(0, 0, 0, 0);
+            const todayCount = notifList.filter(function(n) { return n.time >= todayStart.getTime(); }).length;
+            const viewsSum = notifList.reduce(function(s, n) { return s + (n.views || 0); }, 0);
+            const clicksSum = notifList.reduce(function(s, n) { return s + (n.clicks || 0); }, 0);
+            setStats(total, activeCount, todayCount, viewsSum, clicksSum);
+
+            if (!items.length) {
+                list.innerHTML = '<div class="empty-state">No notifications match this filter.</div>';
+                document.getElementById("notifCount").innerHTML = "Showing 0 of " + total;
+                return;
+            }
+
+            list.innerHTML = "";
+            items.forEach(function(n) {
+                const meta = typeMeta(n.type);
+                const stActive = n.active;
+                const stBg = stActive ? "rgba(16,185,129,0.15)" : "rgba(100,116,139,0.2)";
+                const stBorder = stActive ? "rgba(16,185,129,0.35)" : "rgba(100,116,139,0.4)";
+                const stColor = stActive ? "#10b981" : "#94a3b8";
+                const item = document.createElement("div");
+                item.className = "list-item";
+                item.id = "ntg-" + n.id;
+                item.innerHTML =
+                    '<div class="info">' +
+                        '<div class="thumb"><span class="btn-emoji" style="font-size:19px;">' + esc(n.icon) + '</span></div>' +
+                        '<div style="min-width:0; flex:1;">' +
+                            '<div class="t1">' + esc(n.title) +
+                                '<span class="notif-type type-' + esc(meta.value) + '">' + esc(meta.label.toUpperCase()) + '</span>' +
+                            '</div>' +
+                            '<div class="t2 notif-body">' + esc(n.body) + '</div>' +
+                            (n.link ? '<a class="notif-link" href="' + esc(n.link) + '" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg class="svg-ic" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>' + esc(n.link) + '</a>' : '') +
+                            '<div class="key-meta">' +
+                                '<span class="key-status" style="background:' + stBg + '; border-color:' + stBorder + '; color:' + stColor + ';">' + (stActive ? "ACTIVE" : "INACTIVE") + '</span>' +
+                                '<span class="key-status" style="background:rgba(56,189,248,0.1); border-color:rgba(56,189,248,0.3); color:#38bdf8;" title="Views — kitne phones par pahunchi"><svg class="svg-ic" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; margin-right:4px;"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>' + fmtNum(n.views) + '</span>' +
+                                '<span class="key-status" style="background:rgba(165,180,255,0.1); border-color:rgba(165,180,255,0.3); color:#a5b4ff;" title="Clicks — kitne logon ne tap kiya"><svg class="svg-ic" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; margin-right:4px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>' + fmtNum(n.clicks) + '</span>' +
+                                (n.views > 0 ? '<span class="key-status" style="background:rgba(34,211,238,0.1); border-color:rgba(34,211,238,0.3); color:#22d3ee;" title="Click rate">' + Math.round((n.clicks / n.views) * 100) + '%</span>' : '') +
+                                '<span class="notif-time">' + timeAgo(n.time) + (n.by ? ' • ' + esc(n.by) : '') + '</span>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="actions">' +
+                        '<button class="btn btn-small notif-toggle" title="Toggle active" onclick="toggleNotif(\'' + n.id + '\',' + stActive + ')">' + (stActive ? "Deactivate" : "Activate") + '</button>' +
+                        '<button class="btn btn-small" title="Copy" onclick="copyNotif(\'' + n.id + '\')">Copy</button>' +
+                        '<button class="btn btn-small btn-red" title="Delete" onclick="askDeleteNotif(\'' + n.id + '\')">Delete</button>' +
+                    '</div>';
+                list.appendChild(item);
+            });
+            document.getElementById("notifCount").innerHTML = "Showing " + items.length + " of " + notifList.length;
+        }
+
+        function filterNotifs(cat) {
+            if (cat.indexOf("state:") === 0) {
+                renderNotifs();
+                return;
+            }
+            notifFilter = cat;
+            document.querySelectorAll(".key-filter").forEach(function(b) {
+                b.classList.toggle("active", b.getAttribute("data-cat") === cat);
+            });
+            renderNotifs();
+        }
+        window.filterNotifs = filterNotifs;
+
+        function sendNotification() {
+            const title = document.getElementById("notifTitle").value.trim();
+            const body = document.getElementById("notifBody").value.trim();
+            const link = document.getElementById("notifLink").value.trim();
+            const icon = document.getElementById("notifIconInput").value.trim() || "🔔";
+            if (!title) { showToast("Enter a title!", true); return; }
+            if (!body) { showToast("Enter a message!", true); return; }
+            const meta = NOTIF_TYPES.find(function(t) { return t.label === document.getElementById("notifTypeValue").innerText; }) || NOTIF_TYPES[0];
+            const newRef = push(ref(db, "notifications"));
+            set(newRef, {
+                title: title,
+                body: body,
+                icon: icon,
+                type: meta.value,
+                time: Date.now(),
+                link: link,
+                active: true,
+                views: 0,
+                clicks: 0,
+                by: window.adminEmailAddr || "admin"
+            }).then(function() {
+                document.getElementById("notifTitle").value = "";
+                document.getElementById("notifBody").value = "";
+                document.getElementById("notifLink").value = "";
+                updateNotifPreview();
+                showToast("Notification sent to all users!");
+                loadNotifications();
+            }).catch(function() {
+                showToast("Send failed. Try again.", true);
+            });
+        }
+        window.sendNotification = sendNotification;
+
+        function toggleNotif(id, currentActive) {
+            update(ref(db, "notifications/" + id), { active: !currentActive }).then(function() {
+                showToast(currentActive ? "Notification deactivated." : "Notification activated!");
+                loadNotifications();
+            }).catch(function() {
+                showToast("Failed. Try again.", true);
+            });
+        }
+        window.toggleNotif = toggleNotif;
+
+        function copyNotif(id) {
+            const n = notifList.find(function(x) { return x.id === id; });
+            if (!n) return;
+            const text = n.icon + " " + n.title + "\n" + n.body + (n.link ? "\n" + n.link : "");
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+showToast("Notification copied!");
+                }).catch(function() {
+showToast("Copy failed.", true);
+                });
+            } else {
+                const ta = document.createElement("textarea");
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                try { document.execCommand("copy"); showToast("Notification copied!"); } catch (e) { showToast("Copy failed.", true); }
+                document.body.removeChild(ta);
+            }
+        }
+        window.copyNotif = copyNotif;
+
+        function closeModal() {
+            document.getElementById("modalOverlay").classList.remove("show");
+        }
+        window.closeModal = closeModal;
+
+        function askDeleteNotif(id) {
+            const n = notifList.find(function(x) { return x.id === id; });
+            const body = document.getElementById("modalBody");
+            body.innerHTML =
+                '<h3>Delete Notification?</h3>' +
+                '<p>Notification "<b style="color:#fff;">' + (n ? esc(n.title) : "") + '</b>" will be permanently deleted from the app. Delete it?</p>' +
+                '<div class="modal-btns">' +
+                    '<button class="modal-btn btn-red" onclick="doDeleteNotif(\'' + id + '\')">Yes, Delete</button>' +
+                    '<button class="modal-btn cancel" onclick="closeModal()">Cancel</button>' +
+                '</div>';
+            document.getElementById("modalOverlay").classList.add("show");
+        }
+        window.askDeleteNotif = askDeleteNotif;
+
+        function doDeleteNotif(id) {
+            closeModal();
+            remove(ref(db, "notifications/" + id)).then(function() {
+                showToast("Notification deleted!");
+                loadNotifications();
+            }).catch(function() {
+                showToast("Delete failed.", true);
+            });
+        }
+        window.doDeleteNotif = doDeleteNotif;
+
+        function toggleNotifTypeDropdown() {
+            const menu = document.getElementById("notifTypeMenu");
+            if (!menu) return;
+            const wrap = menu.parentElement;
+            if (wrap.classList.contains("open")) {
+                wrap.classList.remove("open");
+                return;
+            }
+            menu.innerHTML = "";
+            NOTIF_TYPES.forEach(function(opt) {
+                const isSel = opt.label === document.getElementById("notifTypeValue").innerText;
+                const item = document.createElement("div");
+                item.className = "cs-option" + (isSel ? " selected" : "");
+                item.innerHTML =
+                    '<span class="cs-opt-name">' + opt.icon + ' ' + opt.label + '</span>' +
+                    '<span class="cs-opt-check">' + (isSel ? "✓" : "") + '</span>';
+                item.addEventListener("click", function() {
+                    document.getElementById("notifTypeValue").innerText = opt.label;
+                    wrap.classList.remove("open");
+                });
+                menu.appendChild(item);
+            });
+            wrap.classList.add("open");
+        }
+        window.toggleNotifTypeDropdown = toggleNotifTypeDropdown;
+
+        document.addEventListener("click", function(e) {
+            if (!e.target.closest(".custom-select")) {
+                document.querySelectorAll(".custom-select.open").forEach(function(w) { w.classList.remove("open"); });
+            }
+        });
+    </script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

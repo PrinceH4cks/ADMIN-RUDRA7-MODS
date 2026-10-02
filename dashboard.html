@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN PANEL</title>
+        <link rel="stylesheet" href="css/style.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "firebase/app": "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js",
+            "firebase/analytics": "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js",
+            "firebase/auth": "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js",
+            "firebase/database": "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
+        }
+    }
+    </script>
+    <script>document.documentElement.className += " skel-pending";</script>
+</head>
+<body>
+
+    <div class="bg-decor"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="grid"></div></div>
+
+    <div id="pageSkeleton" class="is-hidden" aria-hidden="true">
+        <div class="skw-main">
+        <div class="skw-topbar">
+            <div class="skw skw-h1" style="width:186px"></div>
+            <div class="skw-topbar-right">
+                <div class="skw skw-chip"><div class="skw skw-av"></div><div class="skw skw-chip-txt"></div></div>
+                <div class="skw skw-exit"></div>
+            </div>
+        </div>
+            <div class="skw-stats c8">
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+                <div class="skw-stat"><div class="skw-stat-top"><div class="skw skw-stat-ic"></div><div class="skw skw-stat-lbl"></div></div><div class="skw skw-stat-val"></div></div>
+            </div>
+
+            <div class="skw-card">
+<div class="skw-card-head"><div class="skw skw-card-ic"></div><div class="skw skw-card-txt w150"></div></div>
+                <div class="skw-health">
+                    <div class="skw-health-item"><div class="skw-health-head"><div class="skw skw-health-lbl"></div><div class="skw skw-health-val"></div></div><div class="skw skw-track"></div></div>
+                    <div class="skw-health-item"><div class="skw-health-head"><div class="skw skw-health-lbl" style="width:62px"></div><div class="skw skw-health-val"></div></div><div class="skw skw-track"></div></div>
+                    <div class="skw-health-item"><div class="skw-health-head"><div class="skw skw-health-lbl" style="width:66px"></div><div class="skw skw-health-val"></div></div><div class="skw skw-track"></div></div>
+                    <div class="skw-health-item"><div class="skw-health-head"><div class="skw skw-health-lbl" style="width:92px"></div><div class="skw skw-health-val"></div></div><div class="skw skw-track"></div></div>
+                </div>
+            </div>
+
+            <div class="skw-card">
+<div class="skw-card-head"><div class="skw skw-card-ic"></div><div class="skw skw-card-txt w104"></div></div>
+                <div class="skw-btn-row">
+                    <div class="skw skw-btn sm w72"></div>
+                    <div class="skw skw-btn sm w150"></div>
+                </div>
+            </div>
+
+            <div class="skw-card">
+<div class="skw-card-head"><div class="skw skw-card-ic"></div><div class="skw skw-card-txt w104"></div></div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w38"></div>
+                        <div class="skw skw-t2 w64"></div>
+                        <div class="skw-meta"><div class="skw skw-pill w56"></div><div class="skw skw-pill w46"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w58"></div></div>
+            </div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w56"></div>
+                        <div class="skw skw-t2 w84"></div>
+                        <div class="skw-meta"><div class="skw skw-pill w56"></div><div class="skw skw-pill w46"></div><div class="skw skw-pill w64"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w58"></div></div>
+            </div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w44"></div>
+                        <div class="skw skw-t2 "></div>
+                        <div class="skw-meta"><div class="skw skw-pill w56"></div><div class="skw skw-pill w46"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w58"></div></div>
+            </div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w38"></div>
+                        <div class="skw skw-t2 w84"></div>
+                        <div class="skw-meta"><div class="skw skw-pill w56"></div><div class="skw skw-pill w46"></div><div class="skw skw-pill w34"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w58"></div></div>
+            </div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w56"></div>
+                        <div class="skw skw-t2 w64"></div>
+                        <div class="skw-meta"><div class="skw skw-pill w56"></div><div class="skw skw-pill w46"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w58"></div></div>
+            </div>
+            </div>
+
+            <div class="skw-card">
+<div class="skw-card-head"><div class="skw skw-card-ic"></div><div class="skw skw-card-txt w150"></div></div>
+                <div class="skw-btn-row">
+                    <div class="skw skw-btn sm w150"></div>
+                </div>
+                <div class="skw skw-hint w180" style="margin-top:8px"></div>
+            </div>
+        </div>
+    </div>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="icon"><svg class="svg-ic" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8.5 11l2.5 2.5L15.5 8.5" stroke="#fde047" stroke-width="2.4"/></svg></div>
+            <div>
+                <div class="name">RUDRA7 MODS</div>
+                <div class="role">Admin Panel</div>
+            </div>
+        </div>
+
+        <div class="nav-item active" data-view="overview"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span class="txt">Overview</span></div>
+        <div class="nav-item" data-view="keys"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.5 12.5 20 3M14 9l3 3M17.5 5.5l3 3"/></svg></span><span class="txt">User Keys</span></div>
+        <div class="nav-item" data-view="floating"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span><span class="txt">Floating Buttons</span></div>
+
+        <div class="nav-item" data-view="notifications"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><span class="txt">Notifications</span></div>
+        <div class="nav-item" data-view="settings"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg></span><span class="txt">Settings</span><span class="nav-arrow">▾</span></div>
+        <div class="nav-sub" id="settingsSub">
+            <div class="nav-sub-item active" onclick="window.location.href='settings.html'"><svg class="svg-ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2M9 10h6M9 14h6M9 18h4"/></svg> Site Settings</div>
+        </div>
+
+        <div class="side-user"><div class="su-av">A</div><div class="su-meta"><div class="su-label">Administrator</div><div class="su-email">admin@panel</div></div></div>
+        <button class="logout" id="logoutBtn">LOGOUT</button>
+    </aside>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mnav-group">
+        <div class="m-item active" data-view="overview"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>Home</div>
+        <div class="m-item" data-view="keys"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.5 12.5 20 3M14 9l3 3M17.5 5.5l3 3"/></svg></span>Keys</div>
+        <div class="m-item" data-view="floating"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span>Float</div>
+        </div>
+        <span class="mnav-div"></span>
+        <div class="mnav-group nav-group-alt">
+
+        <div class="m-item" data-view="notifications"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>Notif</div>
+        <div class="m-item" data-view="settings"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg></span>Settings</div>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="topbar">
+            <h1 id="pageTitle"><svg class="svg-ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg> Overview</h1>
+            <div class="topbar-right">
+                <div class="user-chip" id="adminEmail"><span class="uc-av">A</span><span class="uc-name">Admin</span></div>
+                <button class="topbar-exit" onclick="document.getElementById('logoutBtn').click()"><svg class="svg-ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h5M15 16l4-4-4-4M19 12H9"/></svg> EXIT</button>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="lbl">Total Users</span></div>
+                <div class="val" id="statUsers" style="font-size: 22px;">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.5 12.5 20 3M14 9l3 3M17.5 5.5l3 3"/></svg></span><span class="lbl">Total Keys</span></div>
+                <div class="val" id="statKeys">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lbl">Active Keys</span></div>
+                <div class="val" id="statActive" style="font-size: 22px;">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></span><span class="lbl">Banned</span></div>
+                <div class="val" id="statBanned" style="font-size: 22px;">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span><span class="lbl">Expired</span></div>
+                <div class="val" id="statExpired" style="font-size: 22px;">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span><span class="lbl">Floating Buttons</span></div>
+                <div class="val" id="statFloating">0</div>
+            </div>
+<div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></span><span class="lbl">Notifications</span></div>
+                <div class="val" id="statNotifications" style="font-size: 22px;">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8.5 11l2.5 2.5L15.5 8.5"/></svg></span><span class="lbl">Account</span></div>
+                <div class="val" style="font-size: 16px; -webkit-text-fill-color: #10b981;">ACTIVE</div>
+            </div>
+        </div>
+
+<div class="card health-card">
+            <h3><svg class="svg-ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#f43f5e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Key Health</h3>
+            <div class="health-grid">
+                <div class="health-item">
+                    <div class="health-head"><span class="health-label">Active</span><span class="health-val" id="hActive">0</span></div>
+                    <div class="dev-progress-track"><div class="dev-progress-fill" id="hActiveBar" style="width:0%"></div></div>
+                </div>
+                <div class="health-item">
+                    <div class="health-head"><span class="health-label">Banned</span><span class="health-val" id="hBanned">0</span></div>
+                    <div class="dev-progress-track"><div class="dev-progress-fill" id="hBannedBar" style="width:0%"></div></div>
+                </div>
+                <div class="health-item">
+                    <div class="health-head"><span class="health-label">Expired</span><span class="health-val" id="hExpired">0</span></div>
+                    <div class="dev-progress-track"><div class="dev-progress-fill" id="hExpiredBar" style="width:0%"></div></div>
+                </div>
+                <div class="health-item">
+                    <div class="health-head"><span class="health-label">Expiring &lt; 7 days</span><span class="health-val" id="hExpiring" style="color:#fbbf24;">0</span></div>
+                    <div class="dev-progress-track"><div class="dev-progress-fill" id="hExpiringBar" style="width:0%"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3><svg class="svg-ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fbbf24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg> Quick Actions</h3>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button class="btn btn-small" onclick="window.location.href='keys.html'"><svg class="svg-ic" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg> Add Key</button>
+                <button class="btn btn-small btn-green" onclick="window.location.href='floating.html'"><svg class="svg-ic" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg> Floating Button</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3><svg class="svg-ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fb923c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg> Recent Keys</h3>
+            <div id="recentKeys"></div>
+        </div>
+
+        <div class="card">
+            <h3><svg class="svg-ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg> Backup / Export</h3>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button class="btn btn-small" onclick="exportData()"><svg class="svg-ic" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 9l6 6 6-6M4 21h16"/></svg> Download All Data (JSON)</button>
+            </div>
+            <div class="field-hint" style="margin-top: 8px;">Downloads the full database (keys, floating buttons, settings) as a JSON file.</div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <a href="developer.html" class="dev-fab" title="Developer Support"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+
+    <script type="module">
+        import { auth, db } from "./js/firebase-config.js";
+        import { onAuthStateChanged, signOut } from "firebase/auth";
+        import { ref, get, update } from "firebase/database";
+
+        window.auth = auth;
+        window.db = db;
+
+function applyAdminChip() {
+            const el = document.querySelector("#adminEmail .uc-name");
+            const isMobile = window.matchMedia("(max-width: 900px)").matches || window.matchMedia("(pointer: coarse)").matches;
+            if (el) el.innerText = isMobile ? "Admin" : (window.adminEmailAddr || "");
+        }
+        window.applyAdminChip = applyAdminChip;
+        window.addEventListener("resize", applyAdminChip);
+
+        onAuthStateChanged(auth, function(user) {
+            if (!user) {
+                window.location.href = "index.html";
+                return;
+            }
+            const loginTime = parseInt(localStorage.getItem("adminLoginTime") || "0", 10);
+            if (!loginTime) {
+                localStorage.setItem("adminLoginTime", String(Date.now()));
+            } else if (Date.now() - loginTime > 24 * 60 * 60 * 1000) {
+                signOut(auth).then(function() {
+                    sessionStorage.removeItem("adminLoggedIn");
+                    localStorage.removeItem("adminLoginTime");
+                    window.location.href = "index.html";
+                });
+                return;
+            }
+            window.adminEmailAddr = user.email;
+            applyAdminChip();
+            loadDashboard();
+
+            const qs = new URLSearchParams(window.location.search).get("view");
+            if (qs === "keys") {
+                window.location.href = "keys.html";
+                return;
+            }
+            if (qs === "floating") {
+                window.location.href = "floating.html";
+                return;
+            }
+            if (qs && ["overview"].indexOf(qs) !== -1) {
+                history.replaceState({}, "", window.location.pathname);
+            }
+            sessionStorage.setItem("adminView", "overview");
+        });
+
+        document.getElementById("logoutBtn").addEventListener("click", function() {
+            signOut(auth).then(function() {
+                sessionStorage.removeItem("adminLoggedIn");
+                window.location.href = "index.html";
+            });
+        });
+
+        document.querySelectorAll(".nav-item, .m-item").forEach(function(item) {
+            item.addEventListener("click", function() {
+                const view = item.dataset.view;
+                if (view === "logout") {
+                    document.getElementById("logoutBtn").click();
+                    return;
+                }
+                if (view === "keys") {
+                    window.location.href = "keys.html";
+                    return;
+                }
+if (view === "floating") {
+                    window.location.href = "floating.html";
+                    return;
+                }
+                if (view === "notifications") {
+                    window.location.href = "notifications.html";
+                    return;
+                }
+                if (view === "settings") {
+                    if (item.classList.contains("m-item")) {
+                        window.location.href = "settings.html";
+                        return;
+                    }
+                    item.classList.toggle("open");
+                    return;
+                }
+            });
+        });
+
+        function showToast(msg, isError) {
+            const toast = document.getElementById("toast");
+            toast.innerText = msg;
+            toast.className = "toast" + (isError ? " error" : "");
+            toast.style.display = "flex";
+            toast.style.animation = "none";
+            void toast.offsetWidth;
+            toast.style.animation = "";
+            setTimeout(function() { toast.style.display = "none"; }, 2600);
+        }
+        window.showToast = showToast;
+
+        function esc(s) {
+            return String(s || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+        window.esc = esc;
+
+window.allKeys = {};
+        window.allRegistry = {};
+
+        function saveMissingDevices(devices) {
+            const missing = [];
+            devices.forEach(function(id) {
+                if (!id) return;
+                if (!Object.prototype.hasOwnProperty.call(window.allRegistry || {}, id)) missing.push(id);
+            });
+            if (!missing.length) return;
+            const payload = {};
+            missing.forEach(function(id) {
+                payload["deviceRegistry/" + id] = { firstSeen: Date.now(), lastSeen: Date.now() };
+            });
+            update(ref(db), payload).catch(function() { });
+        }
+
+        function loadDashboard() {
+            get(ref(db, "ActiveUserKeys")).then(function(snap) {
+                window.markSkeletonSettled && window.markSkeletonSettled();
+                window.allKeys = snap.exists() ? (snap.val() || {}) : {};
+                renderKeysLists();
+            }).catch(function() { });
+
+            Promise.all([
+                get(ref(db, "users")).catch(function() { return null; }),
+                get(ref(db, "deviceRegistry")).catch(function() { return null; }),
+                get(ref(db, "ActiveUserKeys")).catch(function() { return null; })
+            ]).then(function(results) {
+                const devices = new Set();
+                window.allRegistry = (results[1] && results[1].exists()) ? (results[1].val() || {}) : {};
+                Object.keys(window.allRegistry).forEach(function(did) { devices.add(String(did)); });
+                if (results[0] && results[0].exists()) {
+                    Object.keys(results[0].val()).forEach(function(did) { devices.add(String(did)); });
+                }
+                if (results[2] && results[2].exists()) {
+                    const keys = results[2].val();
+                    Object.keys(keys).forEach(function(k) {
+                        const d = keys[k] || {};
+                        const bid = d.boundDeviceId;
+                        if (bid && String(bid) !== "NONE" && String(bid) !== "none") devices.add(String(bid));
+                        Object.keys(d.boundDevices || {}).forEach(function(did) { devices.add(String(did)); });
+                    });
+                }
+                document.getElementById("statUsers").innerText = devices.size;
+                saveMissingDevices(devices);
+            }).catch(function() { });
+
+            get(ref(db, "notifications")).then(function(snapNotif) {
+                const count = snapNotif.exists() ? Object.keys(snapNotif.val()).length : 0;
+                document.getElementById("statNotifications").innerText = count;
+            }).catch(function() { });
+
+            get(ref(db, "floatingButtons")).then(function(snapFloat) {
+                if (snapFloat.exists()) {
+                    const fb = snapFloat.val();
+                    const count = Object.keys(fb.buttons || {}).length;
+                    document.getElementById("statFloating").innerText = count;
+                } else {
+                    document.getElementById("statFloating").innerText = "0";
+                }
+            }).catch(function() { });
+        }
+        window.loadDashboard = loadDashboard;
+
+function dashExpiry(d) {
+            if (d.banned) return 0;
+            const h = d.durationHours;
+            if (h) {
+                if (h === 99999 || !d.createdAt || d.createdAt <= 0) return 0;
+                return d.createdAt + h * 3600000;
+            }
+            return d.expiresAt || 0;
+        }
+
+        function renderKeysLists() {
+            const keys = window.allKeys;
+            const ids = Object.keys(keys);
+            let active = 0, banned = 0, expired = 0, expiringSoon = 0;
+            const week = 7 * 24 * 3600000;
+            ids.forEach(function(k) {
+                const d = keys[k] || {};
+                if (d.banned) banned++;
+                else if (d.expiresAt > 0 && Date.now() > d.expiresAt) expired++;
+                else {
+                    active++;
+                    const exp = dashExpiry(d);
+                    if (exp > 0 && exp - Date.now() < week) expiringSoon++;
+                }
+            });
+            document.getElementById("statKeys").innerText = ids.length;
+            document.getElementById("statActive").innerText = active;
+            document.getElementById("statBanned").innerText = banned;
+            document.getElementById("statExpired").innerText = expired;
+
+            const total = Math.max(1, ids.length);
+            const hA = document.getElementById("hActive");
+            const hB = document.getElementById("hBanned");
+            const hE = document.getElementById("hExpired");
+            const hX = document.getElementById("hExpiring");
+            if (hA) {
+                hA.innerText = active;
+                document.getElementById("hActiveBar").style.width = Math.round(active / total * 100) + "%";
+            }
+            if (hB) {
+                hB.innerText = banned;
+                document.getElementById("hBannedBar").style.width = Math.round(banned / total * 100) + "%";
+            }
+            if (hE) {
+                hE.innerText = expired;
+                document.getElementById("hExpiredBar").style.width = Math.round(expired / total * 100) + "%";
+            }
+            if (hX) {
+                hX.innerText = expiringSoon;
+                document.getElementById("hExpiringBar").style.width = Math.round(expiringSoon / total * 100) + "%";
+            }
+
+            const sorted = ids.slice().sort(function(a, b) {
+                return (keys[b].createdAt || 0) - (keys[a].createdAt || 0);
+            });
+
+            const recentEl = document.getElementById("recentKeys");
+            if (!sorted.length) {
+                recentEl.innerHTML = '<div class="empty-state">No keys yet.</div>';
+            } else {
+                recentEl.innerHTML = "";
+                sorted.slice(0, 5).forEach(function(k) {
+                    const d = keys[k] || {};
+                    const st = d.banned
+                        ? '<span class="key-status key-bad">BANNED</span>'
+                        : ((d.expiresAt > 0 && Date.now() > d.expiresAt) ? '<span class="key-status key-bad">EXPIRED</span>' : '<span class="key-status key-good">ACTIVE</span>');
+                    const row = document.createElement("div");
+                    row.className = "mini-item";
+                    row.innerHTML =
+                        '<span class="m-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.5 12.5 20 3M14 9l3 3M17.5 5.5l3 3"/></svg></span>' +
+                        '<div><div class="m-t">' + esc(k) + '</div>' +
+                        '<div class="m-s">' + esc(d.name || "") + (d.password ? " • " + esc(d.password) : "") + '</div></div>' +
+                        '<span class="m-badge">' + st + '</span>';
+                    recentEl.appendChild(row);
+                });
+            }
+        }
+        window.renderKeysLists = renderKeysLists;
+
+        function exportData() {
+            const nodes = ["siteSettings", "floatingButtons", "appUpdate", "ActiveUserKeys", "BannedDevices", "users"];
+            const all = {};
+            Promise.all(nodes.map(function(n) {
+                return get(ref(db, n)).then(function(s) { all[n] = s.val() || null; });
+            })).then(function() {
+                const blob = new Blob([JSON.stringify(all, null, 2)], { type: "application/json" });
+                const a = document.createElement("a");
+                a.href = URL.createObjectURL(blob);
+                a.download = "admin-backup-" + new Date().toISOString().replace(/[:.]/g, "-") + ".json";
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(function() { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+            }).catch(function() { showToast("Export failed!", true); });
+        }
+        window.exportData = exportData;
+    </script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

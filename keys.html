@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER KEYS - ADMIN PANEL</title>
+        <link rel="stylesheet" href="css/style.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "firebase/app": "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js",
+            "firebase/analytics": "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js",
+            "firebase/auth": "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js",
+            "firebase/database": "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
+        }
+    }
+    </script>
+    <script>document.documentElement.className += " skel-pending";</script>
+</head>
+<body>
+
+    <div class="bg-decor"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="grid"></div></div>
+
+    <div id="pageSkeleton" class="is-hidden" aria-hidden="true">
+        <div class="skw-main">
+        <div class="skw-topbar">
+            <div class="skw skw-h1" style="width:116px"></div>
+            <div class="skw-topbar-right">
+                <div class="skw skw-chip"><div class="skw skw-av"></div><div class="skw skw-chip-txt"></div></div>
+                <div class="skw skw-exit"></div>
+            </div>
+        </div>
+            <div class="skw-card">
+<div class="skw-card-head"><div class="skw skw-card-ic"></div><div class="skw skw-card-txt w150"></div></div>
+                <div class="skw-form-row">
+                    <div>
+                        <div class="skw skw-label w44"></div>
+                        <div style="display:flex; gap:8px;"><div class="skw skw-input" style="flex:1"></div><div class="skw skw-btn sm" style="width:44px"></div></div>
+                        <div class="skw skw-hint w94pct"></div>
+                    </div>
+                    <div>
+                        <div class="skw skw-label w118"></div>
+                        <div class="skw skw-input"></div>
+                    </div>
+                    <div>
+                        <div class="skw skw-label w44"></div>
+                        <div class="skw skw-cs"></div>
+                    </div>
+                </div>
+                <div class="skw-form-row">
+                    <div>
+                        <div class="skw skw-label w72"></div>
+                        <div class="skw skw-cs"></div>
+                    </div>
+                    <div>
+                        <div class="skw skw-label w142"></div>
+                        <div class="skw skw-input"></div>
+                    </div>
+                </div>
+                <div class="skw-btn-row">
+                    <div class="skw skw-btn" style="width:120px"></div>
+                </div>
+            </div>
+
+            <div class="skw-card">
+                <div class="skw-head-split">
+                    <div class="skw-card-head"><div class="skw skw-card-ic"></div><div class="skw skw-card-txt w150"></div></div>
+                    <div class="skw skw-btn sm w104"></div>
+                </div>
+                <div class="skw-key-bar">
+                    <div class="skw-filters">
+                    <div class="skw skw-filter w58"></div>
+                    <div class="skw skw-filter"></div>
+                    <div class="skw skw-filter w58"></div>
+                    </div>
+                    <div class="skw-sort"><div class="skw skw-sort-lbl"></div><div class="skw skw-sort-select"></div></div>
+                </div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w44"></div>
+                        <div class="skw skw-t2 w64"></div>
+                        <div class="skw-meta"><div class="skw skw-pill w56"></div><div class="skw skw-pill w46"></div><div class="skw skw-pill w34"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w72"></div><div class="skw skw-btn sm w58"></div><div class="skw skw-btn sm w58"></div></div>
+            </div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w56"></div>
+                        <div class="skw skw-t2 w84"></div>
+                        <div class="skw-meta"><div class="skw skw-pill w56"></div><div class="skw skw-pill w46"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w72"></div><div class="skw skw-btn sm w58"></div><div class="skw skw-btn sm w58"></div></div>
+            </div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w38"></div>
+                        <div class="skw skw-t2 w64"></div>
+                        <div class="skw-meta"><div class="skw skw-pill w56"></div><div class="skw skw-pill w34"></div><div class="skw skw-pill w46"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w72"></div><div class="skw skw-btn sm w58"></div><div class="skw skw-btn sm w58"></div></div>
+            </div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w56"></div>
+                        <div class="skw skw-t2 w84"></div>
+                        <div class="skw-meta"><div class="skw skw-pill w56"></div><div class="skw skw-pill w46"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w72"></div><div class="skw skw-btn sm w58"></div><div class="skw skw-btn sm w58"></div></div>
+            </div>
+            <div class="skw-item">
+                <div class="skw-info">
+                    <div class="skw skw-thumb"></div>
+                    <div class="skw-lines">
+                        <div class="skw skw-t1 w44"></div>
+                        <div class="skw skw-t2 w64"></div>
+                        <div class="skw-meta"><div class="skw skw-pill w56"></div><div class="skw skw-pill w46"></div></div>
+                    </div>
+                </div>
+                <div class="skw-actions"><div class="skw skw-btn sm w72"></div><div class="skw skw-btn sm w58"></div><div class="skw skw-btn sm w58"></div></div>
+            </div>
+                <div class="skw skw-list-count"></div>
+            </div>
+        </div>
+    </div>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="icon"><svg class="svg-ic" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8.5 11l2.5 2.5L15.5 8.5" stroke="#fde047" stroke-width="2.4"/></svg></div>
+            <div>
+                <div class="name">RUDRA7 MODS</div>
+                <div class="role">Admin Panel</div>
+            </div>
+        </div>
+
+        <div class="nav-item" data-view="overview"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span class="txt">Overview</span></div>
+        <div class="nav-item active" data-view="keys"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.5 12.5 20 3M14 9l3 3M17.5 5.5l3 3"/></svg></span><span class="txt">User Keys</span></div>
+        <div class="nav-item" data-view="floating"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span><span class="txt">Floating Buttons</span></div>
+
+        <div class="nav-item" data-view="notifications"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><span class="txt">Notifications</span></div>
+        <div class="nav-item" data-view="settings"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg></span><span class="txt">Settings</span><span class="nav-arrow">▾</span></div>
+        <div class="nav-sub" id="settingsSub">
+            <div class="nav-sub-item" onclick="window.location.href='settings.html'"><svg class="svg-ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2M9 10h6M9 14h6M9 18h4"/></svg> Site Settings</div>
+        </div>
+
+        <div class="side-user"><div class="su-av">A</div><div class="su-meta"><div class="su-label">Administrator</div><div class="su-email">admin@panel</div></div></div>
+        <button class="logout" id="logoutBtn">LOGOUT</button>
+    </aside>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mnav-group">
+        <div class="m-item" data-view="overview"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>Home</div>
+        <div class="m-item active" data-view="keys"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.5 12.5 20 3M14 9l3 3M17.5 5.5l3 3"/></svg></span>Keys</div>
+        <div class="m-item" data-view="floating"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span>Float</div>
+        </div>
+        <span class="mnav-div"></span>
+        <div class="mnav-group nav-group-alt">
+
+        <div class="m-item" data-view="notifications"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>Notif</div>
+        <div class="m-item" data-view="settings"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg></span>Settings</div>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="topbar">
+            <h1 id="pageTitle">User Keys</h1>
+            <div class="topbar-right">
+                <div class="user-chip" id="adminEmail"><span class="uc-av">A</span><span class="uc-name">Admin</span></div>
+                <button class="topbar-exit" onclick="document.getElementById('logoutBtn').click()"><svg class="svg-ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h5M15 16l4-4-4-4M19 12H9"/></svg> EXIT</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Add New User Key</h3>
+            <div class="form-row">
+                <div>
+                    <label>Key</label>
+                    <div style="display:flex; gap:8px;">
+                        <input type="text" id="keyInput" placeholder="e.g. VIP-XXXXXX">
+                        <button class="btn btn-small" type="button" onclick="randomKey()" title="Generate random key"><svg class="svg-ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></button>
+                    </div>
+                </div>
+                <div>
+                    <label>User Name / Note</label>
+                    <input type="text" id="keyNameInput" placeholder="e.g. Prince">
+                </div>
+                <div>
+                    <label>Type</label>
+                    <div class="custom-select">
+                        <button type="button" class="cs-trigger" onclick="toggleAddTypeDropdown()">
+                            <span class="cs-value" id="addTypeValue">Normal</span>
+                            <span class="cs-arrow">▾</span>
+                        </button>
+                        <div class="cs-menu" id="addTypeMenu"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label>Duration</label>
+                    <div class="custom-select">
+                        <button type="button" class="cs-trigger" onclick="toggleAddDurationDropdown()">
+                            <span class="cs-value" id="addDurationValue">Lifetime</span>
+                            <span class="cs-arrow">▾</span>
+                        </button>
+                        <div class="cs-menu" id="addDurationMenu"></div>
+                    </div>
+                </div>
+                <div id="addDurationCustomWrap" style="display: none;">
+                    <label>Custom Duration (hours)</label>
+                    <input type="number" id="keyDurationCustom" min="1" placeholder="e.g. 48">
+                </div>
+                <div>
+                    <label>Device Limit</label>
+                    <div class="custom-select">
+                        <button type="button" class="cs-trigger" onclick="toggleAddLimitDropdown()">
+                            <span class="cs-value" id="addLimitValue">Unlimited</span>
+                            <span class="cs-arrow">▾</span>
+                        </button>
+                        <div class="cs-menu" id="addLimitMenu"></div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn" onclick="addKey()">Save Key</button>
+        </div>
+
+        <div class="card">
+<h3 style="display:flex; justify-content:space-between; align-items:center;">Active User Keys
+                <button class="btn btn-small btn-red" onclick="clearExpiredKeys()" title="Delete all expired keys"><svg class="svg-ic" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg> Clear Expired</button>
+            </h3>
+            <div class="key-bar">
+                <div class="key-filters">
+                    <button class="key-filter active" data-cat="all" onclick="filterKeys('all')">All</button>
+                    <button class="key-filter" data-cat="Normal" onclick="filterKeys('Normal')">Normal</button>
+                    <button class="key-filter" data-cat="VIP" onclick="filterKeys('VIP')">VIP</button>
+                </div>
+                <div class="sort-wrap">
+                    <span class="sort-label">Sort</span>
+                    <select class="sort-select" id="keySortSelect" onchange="changeKeySort(this.value)">
+                        <option value="newest">Newest first</option>
+                        <option value="oldest">Oldest first</option>
+                        <option value="expiring">Expiring soon</option>
+                    </select>
+                </div>
+            </div>
+            <div id="keysList"></div>
+            <div id="keysCount" class="list-count"></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modalBody"></div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <a href="developer.html" class="dev-fab" title="Developer Support"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+
+    <script type="module">
+        import { auth, db } from "./js/firebase-config.js";
+        import { onAuthStateChanged, signOut } from "firebase/auth";
+        import { ref, get, set, update, remove } from "firebase/database";
+
+        window.auth = auth;
+        window.db = db;
+        window.signOut = signOut;
+        window.ref = ref;
+        window.get = get;
+        window.set = set;
+        window.update = update;
+        window.remove = remove;
+
+function applyAdminChip() {
+            const el = document.querySelector("#adminEmail .uc-name");
+            const isMobile = window.matchMedia("(max-width: 900px)").matches || window.matchMedia("(pointer: coarse)").matches;
+            if (el) el.innerText = isMobile ? "Admin" : (window.adminEmailAddr || "");
+        }
+        window.applyAdminChip = applyAdminChip;
+        window.addEventListener("resize", applyAdminChip);
+
+        onAuthStateChanged(auth, function(user) {
+            if (!user) {
+                window.location.href = "index.html";
+                return;
+            }
+            const loginTime = parseInt(localStorage.getItem("adminLoginTime") || "0", 10);
+            if (!loginTime) {
+                localStorage.setItem("adminLoginTime", String(Date.now()));
+            } else if (Date.now() - loginTime > 24 * 60 * 60 * 1000) {
+                signOut(auth).then(function() {
+                    sessionStorage.removeItem("adminLoggedIn");
+                    localStorage.removeItem("adminLoginTime");
+                    window.location.href = "index.html";
+                });
+                return;
+            }
+            window.adminEmailAddr = user.email;
+            applyAdminChip();
+            loadKeys();
+        });
+
+        document.getElementById("logoutBtn").addEventListener("click", function() {
+            signOut(auth).then(function() {
+                sessionStorage.removeItem("adminLoggedIn");
+                window.location.href = "index.html";
+            });
+        });
+
+        document.querySelectorAll(".nav-item, .m-item").forEach(function(item) {
+            item.addEventListener("click", function() {
+                var view = item.dataset.view;
+                if (view === "logout") {
+                    document.getElementById("logoutBtn").click();
+                    return;
+                }
+                if (view === "keys") return;
+if (view === "floating") {
+                    window.location.href = "floating.html";
+                    return;
+                }
+                if (view === "notifications") {
+                    window.location.href = "notifications.html";
+                    return;
+                }
+                if (view === "settings") {
+                    if (item.classList.contains("m-item")) {
+                        window.location.href = "settings.html";
+                        return;
+                    }
+                    item.classList.toggle("open");
+                    return;
+                }
+                window.location.href = "dashboard.html?view=" + view;
+            });
+        });
+
+        function showToast(msg, isError) {
+            const toast = document.getElementById("toast");
+            toast.innerText = msg;
+            toast.className = "toast" + (isError ? " error" : "");
+            toast.style.display = "flex";
+            toast.style.animation = "none";
+            void toast.offsetWidth;
+            toast.style.animation = "";
+            setTimeout(function() { toast.style.display = "none"; }, 2600);
+        }
+        window.showToast = showToast;
+
+        function esc(s) {
+            return String(s || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+        window.esc = esc;
+
+        function jsStr(s) {
+            return String(s || "").replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+        }
+        window.jsStr = jsStr;
+
+        window.deviceCache = {};
+        window.deviceModalKey = "";
+
+        function deviceChip(did) {
+            return '<span class="key-expiry" style="display:inline-flex; align-items:center; gap:4px; margin-right:8px;" title="' + esc(did) + '"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg> ' + esc(did.length > 12 ? did.slice(0, 12) + "..." : did) + '</span>';
+        }
+        window.deviceChip = deviceChip;
+
+        function showDevices(key) {
+            const ids = window.deviceCache[key] || [];
+            if (!ids.length) { showToast("No devices bound yet!"); return; }
+            window.deviceModalKey = key;
+            const rows = ids.map(function(did) {
+                return '<div style="display:flex; align-items:center; justify-content:space-between; gap:10px; background:rgba(255,255,255,0.04); border-radius:10px; padding:8px 12px; margin-bottom:6px;">' +
+                    '<span style="font-size:11px; color:#94a3b8; font-family:monospace; word-break:break-all;">' + esc(did) + '</span>' +
+                    '<button class="btn btn-red btn-small" style="flex-shrink:0;" onclick="unbindDevice(\'' + jsStr(key) + '\',\'' + jsStr(did) + '\')">RESET</button>' +
+                    '</div>';
+            }).join("");
+            document.getElementById("modalBody").innerHTML =
+                '<h3 style="display:flex; justify-content:space-between; align-items:center;">Devices (' + ids.length + ')<button class="btn btn-red btn-small" onclick="closeModal()">CLOSE</button></h3>' +
+                '<div style="max-height:60vh; overflow-y:auto;">' + rows + '</div>';
+            document.getElementById("modalOverlay").classList.add("show");
+        }
+        window.showDevices = showDevices;
+
+        function loadKeys() {
+            const list = document.getElementById("keysList");
+            list.innerHTML = '<div class="empty-state">Loading...</div>';
+            get(ref(db, "ActiveUserKeys")).then(function(snap) {
+                window.markSkeletonSettled && window.markSkeletonSettled();
+                list.innerHTML = "";
+                if (!snap.exists()) {
+                    list.innerHTML = '<div class="empty-state">No keys yet. Add one above.</div>';
+                    return;
+                }
+                const keys = snap.val();
+                window.lockMap = {};
+                let anyLocked = false;
+                Object.keys(keys).forEach(function(k) {
+                    const locked = !!(keys[k] || {}).locked;
+                    window.lockMap[k] = locked;
+                    if (locked) anyLocked = true;
+                });
+window.anyKeyLocked = anyLocked;
+                const entries = [];
+                Object.keys(keys).forEach(function(key) {
+                    const data = keys[key] || {};
+                    if (window.keyFilterState !== "all") {
+                        const kType = data.type || "Normal";
+                        if (kType !== window.keyFilterState) return;
+                    }
+                    const banned = !!data.banned;
+                    let statusText, statusCls, expiryText, durationText;
+                    const dur = data.durationHours;
+                    if (dur) {
+                        durationText = (dur === 99999) ? "Lifetime" : (dur + " Hours");
+                        const expired = (dur !== 99999) && (data.createdAt > 0) && Date.now() > (data.createdAt + dur * 3600000);
+                        statusText = banned ? "BANNED" : (expired ? "EXPIRED" : "ACTIVE");
+                        statusCls = (banned || expired) ? "key-bad" : "key-good";
+                        expiryText = (dur === 99999 || data.createdAt <= 0) ? "Lifetime"
+                            : new Date(data.createdAt + dur * 3600000).toLocaleString("en-GB", { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" });
+                    } else {
+                        durationText = "";
+                        const expired = data.expiresAt > 0 && Date.now() > data.expiresAt;
+                        statusText = banned ? "BANNED" : (expired ? "EXPIRED" : "ACTIVE");
+                        statusCls = (banned || expired) ? "key-bad" : "key-good";
+                        expiryText = data.expiresAt > 0
+                            ? new Date(data.expiresAt).toLocaleString("en-GB", { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })
+                            : "Never";
+                    }
+                const expiryMs = computeExpiryMs(data, dur);
+                const type = data.type || "Normal";
+                editTypeState = type;
+                    const usedText = data.isUsed
+                        ? '<span class="key-status" style="background:rgba(236,72,153,0.12); color:#ec4899; border:1px solid rgba(236,72,153,0.3);">USED</span>'
+                        : '<span class="key-status" style="background:rgba(16,185,129,0.12); color:#10b981; border:1px solid rgba(16,185,129,0.3);">UNUSED</span>';
+                    const typeText = '<span class="key-status" style="background:rgba(168,85,247,0.12); color:#a855f7; border:1px solid rgba(168,85,247,0.3);">' + esc(type.toUpperCase()) + '</span>';
+                    const boundId = data.boundDeviceId && String(data.boundDeviceId) !== "NONE" && String(data.boundDeviceId) !== "none" ? String(data.boundDeviceId) : "";
+                    const boundMap = data.boundDevices || {};
+                    const allDeviceIds = [];
+                    if (boundId) allDeviceIds.push(boundId);
+                    Object.keys(boundMap).forEach(function(did) { if (did !== boundId) allDeviceIds.push(did); });
+                    window.deviceCache[key] = allDeviceIds;
+                    const shownChips = allDeviceIds.slice(0, 3).map(deviceChip);
+                    const limitChip = '<span class="key-status" style="background:rgba(56,189,248,0.12); color:#38bdf8; border:1px solid rgba(56,189,248,0.3);"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg> ' + allDeviceIds.length + '/' + (data.maxDevices ? data.maxDevices : "∞") + '</span>';
+                    const name = data.note || data.name || "";
+                    const lockBadge = data.locked
+                        ? '<span class="key-status" style="background:rgba(251,191,36,0.12); color:#fbbf24; border:1px solid rgba(251,191,36,0.4);"><svg class="svg-ic" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> LOCKED</span>'
+                        : '';
+                    const lockAction = data.locked
+                        ? '<button class="btn btn-small" style="background:rgba(251,191,36,0.15); color:#fbbf24; border:1px solid rgba(251,191,36,0.4);" onclick="toggleKeyLock(\'' + jsStr(key) + '\')"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/><path d="M2 14l18 6M4 13l15 7"/></svg> UNLOCK</button>'
+: (anyLocked ? '' : '<button class="btn btn-small" onclick="toggleKeyLock(\'' + jsStr(key) + '\')"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> LOCK</button>');
+                    const maxD = data.maxDevices;
+                    const devProg = (maxD && allDeviceIds.length > 0)
+                        ? '<div class="dev-progress"><div class="dev-progress-track"><div class="dev-progress-fill" style="width:' + Math.min(100, Math.round(allDeviceIds.length / maxD * 100)) + '%"></div></div><span>' + allDeviceIds.length + ' of ' + maxD + ' used</span></div>'
+                        : '';
+                    const item = document.createElement("div");
+                    item.className = "list-item";
+                    item.innerHTML =
+'<div class="info"><div style="font-size: 20px;"><svg class="svg-ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fbbf24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.5 12.5 20 3M14 9l3 3M17.5 5.5l3 3"/></svg></div><div>' +
+                        '<div class="t1">' + esc(key) + '<button class="copy-key" onclick="copyKey(\'' + jsStr(key) + '\')" title="Copy key"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>' +
+                        '<div class="t2">' + esc(name || "-") + '</div>' +
+                        '<div class="key-meta" style="display:flex; gap:8px; align-items:center; margin-top:4px; flex-wrap:wrap;">' +
+                        '<span class="key-status ' + statusCls + '">' + statusText + '</span>' +
+                        lockBadge +
+                        typeText + usedText + limitChip +
+                        (data.createdAt > 0 ? '<span class="key-expiry age-chip"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ' + esc(ageText(data.createdAt)) + ' ago</span>' : '') +
+                        (durationText ? '<span class="key-expiry dur-chip"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#fb923c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ' + esc(durationText) + '</span>' : '') +
+                        '<span class="key-expiry exp-text">Expires: ' + esc(expiryText) + '</span>' +
+                        (expiryMs > 0 ? '<span class="key-countdown" data-expiry="' + expiryMs + '"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2h14M5 22h14M6 2v5l6 5 6-5V2M6 22v-5l6-5 6 5v5"/></svg> ' + esc(remainingText(expiryMs)) + '</span>' : '') +
+                        '</div>' +
+                        devProg +
+                        (allDeviceIds.length ? '<div class="key-devices" style="margin-top:8px; display:flex; align-items:center; gap:6px; flex-wrap:wrap;">' + shownChips.join("") +
+                            (allDeviceIds.length > 3 ? '<button class="btn btn-small" style="padding:6px 10px; font-size:10px;" onclick="showDevices(\'' + jsStr(key) + '\')">+' + (allDeviceIds.length - 3) + ' MORE</button>' : '') +
+                            '</div>' : '') +
+                        '</div></div>' +
+                        '<div class="actions">' +
+                        lockAction +
+                        (allDeviceIds.length ? '<button class="btn btn-small" onclick="showDevices(\'' + jsStr(key) + '\')">DEVICES (' + allDeviceIds.length + ')</button>' : '') +
+                        '<button class="btn btn-small ' + (banned ? "btn-green" : "btn-red") + '" onclick="toggleBan(\'' + jsStr(key) + '\')">' + (banned ? "UNBAN" : "BAN") + '</button>' +
+                        '<button class="btn btn-small" onclick="editKey(\'' + jsStr(key) + '\')">EDIT</button>' +
+                        '<button class="btn btn-red btn-small" onclick="deleteKey(\'' + jsStr(key) + '\')">DELETE</button>' +
+                        '</div>';
+entries.push({ el: item, created: data.createdAt || 0, expiry: expiryMs || 0 });
+                });
+                const sortMode = window.keySortState || "newest";
+                entries.sort(function(a, b) {
+                    if (sortMode === "oldest") return (a.created || 0) - (b.created || 0);
+                    if (sortMode === "expiring") {
+                        const ae = a.expiry || 0, be = b.expiry || 0;
+                        if (!ae && !be) return 0;
+                        if (!ae) return 1;
+                        if (!be) return -1;
+                        return ae - be;
+                    }
+                    return (b.created || 0) - (a.created || 0);
+                });
+                const pageSize = window.keysPageSize || 15;
+                const visible = entries.slice(0, pageSize);
+                visible.forEach(function(e) { list.appendChild(e.el); });
+                if (entries.length === 0) {
+                    list.innerHTML = '<div class="empty-state">No ' + (window.keyFilterState !== "all" ? window.keyFilterState + " " : "") + 'keys found.</div>';
+                } else if (entries.length > pageSize) {
+                    const more = document.createElement("div");
+                    more.className = "load-more-wrap";
+                    const pct = Math.round(pageSize / entries.length * 100);
+                    more.innerHTML = '<div class="load-more-bar"><div style="width:' + pct + '%"></div></div>' +
+                        '<button class="btn btn-small" onclick="showMoreKeys()">SHOW MORE <span class="load-more-count">(' + (entries.length - pageSize) + ' LEFT)</span></button>';
+                    list.appendChild(more);
+                }
+                const countEl = document.getElementById("keysCount");
+                if (countEl) countEl.textContent = "Showing " + Math.min(pageSize, entries.length) + " of " + entries.length + " key(s)";
+            }).catch(function() {
+                list.innerHTML = '<div class="empty-state">Error loading keys.</div>';
+            });
+        }
+        window.loadKeys = loadKeys;
+
+        function computeExpiryMs(data, dur) {
+            if (dur) {
+                if (dur === 99999 || !data.createdAt || data.createdAt <= 0) return 0;
+                return data.createdAt + dur * 3600000;
+            }
+            if (data.expiresAt && data.expiresAt > 0) return data.expiresAt;
+            return 0;
+        }
+
+        function remainingText(ms) {
+            const diff = ms - Date.now();
+            if (diff <= 0) return "Expired";
+            const s = Math.floor(diff / 1000);
+            const d = Math.floor(s / 86400);
+            const h = Math.floor((s % 86400) / 3600);
+            const m = Math.floor((s % 3600) / 60);
+            const sec = s % 60;
+            if (d > 0) return d + "d " + h + "h " + m + "m " + sec + "s";
+            if (h > 0) return h + "h " + m + "m " + sec + "s";
+            if (m > 0) return m + "m " + sec + "s";
+            return sec + "s";
+        }
+
+        function updateCountdowns() {
+            document.querySelectorAll(".key-countdown").forEach(function(el) {
+                const exp = parseInt(el.getAttribute("data-expiry"), 10);
+                if (!exp) return;
+                if (Date.now() >= exp) {
+                    el.innerText = "⏳ Expired";
+                    const item = el.closest(".list-item");
+                    if (item) {
+                        const st = item.querySelector(".key-status.key-good");
+                        if (st) { st.textContent = "EXPIRED"; st.className = "key-status key-bad"; }
+                    }
+                } else {
+                    el.innerText = "⏳ " + remainingText(exp);
+                }
+            });
+        }
+setInterval(updateCountdowns, 1000);
+        window.computeExpiryMs = computeExpiryMs;
+        window.remainingText = remainingText;
+
+        function ageText(ms) {
+            const diff = Math.max(0, Date.now() - ms);
+            const s = Math.floor(diff / 1000);
+            if (s < 60) return "just now";
+            const m = Math.floor(s / 60);
+            if (m < 60) return m + "m";
+            const h = Math.floor(m / 60);
+            if (h < 24) return h + "h";
+            const d = Math.floor(h / 24);
+            return d + "d";
+        }
+
+        function copyKey(key) {
+            const done = function() { showToast("Key copied!"); };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(key).then(done).catch(function() { fallbackCopy(key); done(); });
+            } else { fallbackCopy(key); done(); }
+        }
+        function fallbackCopy(text) {
+            const ta = document.createElement("textarea");
+            ta.value = text;
+            ta.style.position = "fixed";
+            ta.style.opacity = "0";
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand("copy"); } catch (e) {}
+            document.body.removeChild(ta);
+        }
+        window.copyKey = copyKey;
+        window.ageText = ageText;
+
+        window.keySortState = "newest";
+        window.keysPageSize = 15;
+
+        function changeKeySort(val) {
+            window.keySortState = val;
+            loadKeys();
+        }
+        window.changeKeySort = changeKeySort;
+
+        function showMoreKeys() {
+            window.keysPageSize = (window.keysPageSize || 15) + 15;
+            loadKeys();
+        }
+        window.showMoreKeys = showMoreKeys;
+
+        let addDurationState = { mode: "preset", hours: 99999 };
+
+        const KEY_DURATION_OPTIONS = [
+            { hours: 99999, label: "Lifetime" },
+            { hours: 24, label: "24 Hours" },
+            { hours: 48, label: "48 Hours" },
+            { hours: 72, label: "3 Days" },
+            { hours: 168, label: "7 Days" },
+            { hours: 720, label: "30 Days" },
+            { hours: 0, label: "Custom Hours..." }
+        ];
+
+        function toggleAddDurationDropdown() {
+            const menu = document.getElementById("addDurationMenu");
+            const wrap = menu.parentElement;
+            if (wrap.classList.contains("open")) {
+                wrap.classList.remove("open");
+                return;
+            }
+            closeAddTypeDropdown();
+            closeEditTypeDropdown();
+            closeAddLimitDropdown();
+            closeEditLimitDropdown();
+            menu.innerHTML = "";
+            KEY_DURATION_OPTIONS.forEach(function(opt) {
+                let isSel;
+                if (opt.hours === 0) {
+                    isSel = addDurationState.mode === "custom";
+                } else {
+                    isSel = addDurationState.mode === "preset" && addDurationState.hours === opt.hours;
+                }
+                const item = document.createElement("div");
+                item.className = "cs-option" + (isSel ? " selected" : "");
+                item.innerHTML =
+                    '<span class="cs-opt-name">' + esc(opt.label) + '</span>' +
+                    '<span class="cs-opt-check">' + (isSel ? "✓" : "") + '</span>';
+                item.addEventListener("click", function() {
+                    if (opt.hours === 0) {
+                        addDurationState = { mode: "custom", hours: 0 };
+                        document.getElementById("keyDurationCustom").focus();
+                    } else {
+                        addDurationState = { mode: "preset", hours: opt.hours };
+                    }
+                    document.getElementById("addDurationValue").innerText = opt.label;
+                    document.getElementById("addDurationCustomWrap").style.display = (opt.hours === 0) ? "block" : "none";
+                    wrap.classList.remove("open");
+                });
+                menu.appendChild(item);
+            });
+            wrap.classList.add("open");
+        }
+        window.toggleAddDurationDropdown = toggleAddDurationDropdown;
+
+        function closeAddDurationDropdown() {
+            const menu = document.getElementById("addDurationMenu");
+            if (menu) menu.parentElement.classList.remove("open");
+        }
+        window.closeAddDurationDropdown = closeAddDurationDropdown;
+
+        let addTypeState = "Normal";
+        let editTypeState = "Normal";
+
+        const KEY_TYPE_OPTIONS = [
+            { value: "Normal", label: "Normal", icon: '<svg class="svg-ic" viewBox="0 0 24 24" width="14" height="14" fill="#fbbf24" stroke="none"><path d="M12 2l2.9 6.26 6.6.57-5 4.35 1.5 6.47L12 16.9l-6 3.75 1.5-6.47-5-4.35 6.6-.57z"/></svg>' },
+            { value: "VIP", label: "VIP", icon: '<svg class="svg-ic" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fbbf24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16V6l4 4 4-6 4 6 4-4v10z"/><path d="M4 20h16"/></svg>' }
+        ];
+
+        function renderTypeMenu(menuId, state, onPick) {
+            const menu = document.getElementById(menuId);
+            if (!menu) return;
+            menu.innerHTML = "";
+            KEY_TYPE_OPTIONS.forEach(function(opt) {
+                const isSel = state === opt.value;
+                const item = document.createElement("div");
+                item.className = "cs-option" + (isSel ? " selected" : "");
+                item.innerHTML =
+                    '<span class="cs-opt-name">' + opt.icon + ' ' + esc(opt.label) + '</span>' +
+                    '<span class="cs-opt-check">' + (isSel ? "✓" : "") + '</span>';
+                item.addEventListener("click", function() {
+                    onPick(opt);
+                    menu.parentElement.classList.remove("open");
+                });
+                menu.appendChild(item);
+            });
+        }
+
+        function toggleAddTypeDropdown() {
+            const menu = document.getElementById("addTypeMenu");
+            if (!menu) return;
+            const wrap = menu.parentElement;
+            if (wrap.classList.contains("open")) {
+                wrap.classList.remove("open");
+                return;
+            }
+            closeAddDurationDropdown();
+            closeEditTypeDropdown();
+            closeAddLimitDropdown();
+            closeEditLimitDropdown();
+            renderTypeMenu("addTypeMenu", addTypeState, function(opt) {
+                addTypeState = opt.value;
+                document.getElementById("addTypeValue").innerText = opt.label;
+            });
+            wrap.classList.add("open");
+        }
+        window.toggleAddTypeDropdown = toggleAddTypeDropdown;
+
+        function closeAddTypeDropdown() {
+            const menu = document.getElementById("addTypeMenu");
+            if (menu) menu.parentElement.classList.remove("open");
+        }
+        window.closeAddTypeDropdown = closeAddTypeDropdown;
+
+        function getAddType() { return addTypeState; }
+
+        const KEY_LIMIT_OPTIONS = [
+            { value: 0, label: "Unlimited" },
+            { value: 1, label: "1 Device" },
+            { value: 2, label: "2 Devices" },
+            { value: 3, label: "3 Devices" },
+            { value: 5, label: "5 Devices" }
+        ];
+
+        let addLimitState = 0;
+        let editLimitState = 0;
+
+        function limitLabel(v) {
+            const vn = parseInt(v, 10) || 0;
+            const opt = KEY_LIMIT_OPTIONS.find(function(o) { return o.value === vn; });
+            return opt ? opt.label : (vn + " Devices");
+        }
+
+        function renderLimitMenu(menuId, state, onPick) {
+            const menu = document.getElementById(menuId);
+            if (!menu) return;
+            menu.innerHTML = "";
+            KEY_LIMIT_OPTIONS.forEach(function(opt) {
+                const isSel = state === opt.value;
+                const item = document.createElement("div");
+                item.className = "cs-option" + (isSel ? " selected" : "");
+                item.innerHTML =
+                    '<span class="cs-opt-name"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg> ' + esc(opt.label) + '</span>' +
+                    '<span class="cs-opt-check">' + (isSel ? "✓" : "") + '</span>';
+                item.addEventListener("click", function() {
+                    onPick(opt);
+                    menu.parentElement.classList.remove("open");
+                });
+                menu.appendChild(item);
+            });
+        }
+
+        function toggleAddLimitDropdown() {
+            const menu = document.getElementById("addLimitMenu");
+            if (!menu) return;
+            const wrap = menu.parentElement;
+            if (wrap.classList.contains("open")) {
+                wrap.classList.remove("open");
+                return;
+            }
+            closeAddDurationDropdown();
+            closeAddTypeDropdown();
+            closeEditTypeDropdown();
+            closeEditLimitDropdown();
+            renderLimitMenu("addLimitMenu", addLimitState, function(opt) {
+                addLimitState = opt.value;
+                document.getElementById("addLimitValue").innerText = opt.label;
+            });
+            wrap.classList.add("open");
+        }
+        window.toggleAddLimitDropdown = toggleAddLimitDropdown;
+
+        function closeAddLimitDropdown() {
+            const menu = document.getElementById("addLimitMenu");
+            if (menu) menu.parentElement.classList.remove("open");
+        }
+        window.closeAddLimitDropdown = closeAddLimitDropdown;
+
+        function toggleEditLimitDropdown() {
+            const menu = document.getElementById("mLimitMenu");
+            if (!menu) return;
+            const wrap = menu.parentElement;
+            if (wrap.classList.contains("open")) {
+                wrap.classList.remove("open");
+                return;
+            }
+            closeAddDurationDropdown();
+            closeAddTypeDropdown();
+            closeEditTypeDropdown();
+            closeAddLimitDropdown();
+            renderLimitMenu("mLimitMenu", editLimitState, function(opt) {
+                editLimitState = opt.value;
+                document.getElementById("mLimitValue").innerText = opt.label;
+            });
+            wrap.classList.add("open");
+        }
+        window.toggleEditLimitDropdown = toggleEditLimitDropdown;
+
+        function closeEditLimitDropdown() {
+            const menu = document.getElementById("mLimitMenu");
+            if (menu) menu.parentElement.classList.remove("open");
+        }
+        window.closeEditLimitDropdown = closeEditLimitDropdown;
+
+        function getAddLimit() { return addLimitState; }
+
+        function toggleEditTypeDropdown() {
+            const menu = document.getElementById("mTypeMenu");
+            if (!menu) return;
+            const wrap = menu.parentElement;
+            if (wrap.classList.contains("open")) {
+                wrap.classList.remove("open");
+                return;
+            }
+            closeAddDurationDropdown();
+            closeAddTypeDropdown();
+            closeAddLimitDropdown();
+            closeEditLimitDropdown();
+            renderTypeMenu("mTypeMenu", editTypeState, function(opt) {
+                editTypeState = opt.value;
+                document.getElementById("mTypeValue").innerText = opt.label;
+            });
+            wrap.classList.add("open");
+        }
+        window.toggleEditTypeDropdown = toggleEditTypeDropdown;
+
+        function closeEditTypeDropdown() {
+            const menu = document.getElementById("mTypeMenu");
+            if (menu) menu.parentElement.classList.remove("open");
+        }
+        window.closeEditTypeDropdown = closeEditTypeDropdown;
+
+        document.addEventListener("click", function(e) {
+            if (!e.target.closest(".custom-select")) {
+                closeAddDurationDropdown();
+                closeAddTypeDropdown();
+                closeEditTypeDropdown();
+                closeAddLimitDropdown();
+                closeEditLimitDropdown();
+            }
+        });
+
+        function getAddDurationHours() {
+            if (addDurationState.mode === "custom") {
+                const val = parseInt(document.getElementById("keyDurationCustom").value, 10);
+                if (!val || val <= 0) { showToast("Enter a valid duration in hours!", true); return -1; }
+                return val;
+            }
+            return addDurationState.hours;
+        }
+
+        function randomKey() {
+            const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789";
+            let s = "VIP-";
+            for (let i = 0; i < 6; i++) s += chars.charAt(Math.floor(Math.random() * chars.length));
+            document.getElementById("keyInput").value = s;
+        }
+        window.randomKey = randomKey;
+
+        function addKey() {
+            const key = document.getElementById("keyInput").value.trim();
+            const note = document.getElementById("keyNameInput").value.trim();
+            const type = getAddType();
+            if (!key) { showToast("Key is required!", true); return; }
+            const durationHours = getAddDurationHours();
+            if (durationHours === -1) return;
+            set(ref(db, "ActiveUserKeys/" + key), {
+                createdAt: Date.now(),
+                durationHours: durationHours,
+                maxDevices: getAddLimit(),
+                isUsed: false,
+                boundDeviceId: "NONE",
+                type: type,
+                note: note,
+                banned: false
+            })
+                .then(function() {
+                    showToast("Key saved!");
+                    document.getElementById("keyInput").value = "";
+                    document.getElementById("keyNameInput").value = "";
+                    document.getElementById("keyDurationCustom").value = "";
+                    addDurationState = { mode: "preset", hours: 99999 };
+                    document.getElementById("addDurationValue").innerText = "Lifetime";
+                    document.getElementById("addDurationCustomWrap").style.display = "none";
+                    addLimitState = 0;
+                    document.getElementById("addLimitValue").innerText = "Unlimited";
+                    loadKeys();
+                })
+                .catch(function() { showToast("Error saving key!", true); });
+        }
+        window.addKey = addKey;
+
+        window.keyFilterState = "all";
+
+function filterKeys(cat) {
+            window.keyFilterState = cat;
+            window.keysPageSize = 15;
+            const btns = document.querySelectorAll(".key-filter");
+            btns.forEach(function(b) {
+                b.classList.toggle("active", b.getAttribute("data-cat") === cat);
+            });
+            loadKeys();
+        }
+        window.filterKeys = filterKeys;
+
+        let pendingLockAction = null;
+
+        function requireLockPassword(callback) {
+            pendingLockAction = callback;
+            document.getElementById("modalBody").innerHTML =
+                '<h3 style="display:flex; justify-content:space-between; align-items:center;">Developer Security<button class="btn btn-red btn-small" onclick="closeModal()">CLOSE</button></h3>' +
+                '<div style="font-size:12px; color:var(--muted); margin-bottom:12px; line-height:1.5;">This key is protected by the developer. Enter the password to continue:</div>' +
+'<input type="password" id="lockPassInput" placeholder="Enter password" readonly onpointerdown="this.removeAttribute(\'readonly\')" onfocus="this.removeAttribute(\'readonly\')" autocomplete="off" name="lockpassnl" autocapitalize="none" autocorrect="off" spellcheck="false" data-lpignore="true" style="margin-bottom:14px;">' +
+                '<div style="display:flex; gap:10px; justify-content:flex-end;">' +
+                '<button class="btn btn-red btn-small" onclick="closeModal()">CANCEL</button>' +
+                '<button class="btn btn-small" onclick="confirmLockPassword()">CONFIRM</button></div>';
+            document.getElementById("modalOverlay").classList.add("show");
+            const inp = document.getElementById("lockPassInput");
+            setTimeout(function() { if (inp && !inp.hasAttribute("readonly")) inp.focus(); }, 100);
+            document.getElementById("lockPassInput").addEventListener("keydown", function(e) { if (e.key === "Enter") confirmLockPassword(); });
+        }
+        window.requireLockPassword = requireLockPassword;
+
+        function confirmLockPassword() {
+            const val = (document.getElementById("lockPassInput").value || "").trim();
+            if (val !== "0007") {
+                showToast("Wrong password!", true);
+                const inp = document.getElementById("lockPassInput");
+                if (inp) { inp.value = ""; inp.focus(); }
+                return;
+            }
+            const fn = pendingLockAction;
+            pendingLockAction = null;
+            closeModal();
+            if (typeof fn === "function") {
+                fn();
+            }
+        }
+        window.confirmLockPassword = confirmLockPassword;
+
+        function toggleKeyLock(key) {
+            requireLockPassword(function() {
+                get(ref(db, "ActiveUserKeys/" + key)).then(function(snap) {
+                    const data = snap.val() || {};
+                    const nextLocked = !data.locked;
+                    if (nextLocked) {
+                        get(ref(db, "ActiveUserKeys")).then(function(snapAll) {
+                            let conflict = false;
+                            if (snapAll.exists()) {
+                                const all = snapAll.val();
+                                Object.keys(all).forEach(function(k) {
+                                    if (k !== key && all[k] && all[k].locked) conflict = true;
+                                });
+                            }
+                            if (conflict) {
+                                showToast("Unlock the key first!", true);
+                                return;
+                            }
+                            update(ref(db, "ActiveUserKeys/" + key), { locked: true }).then(function() {
+                                showToast("Key LOCKED! Delete/Edit/Ban are now password protected.");
+                                loadKeys();
+                            }).catch(function() { showToast("Error!", true); });
+                        });
+                        return;
+                    }
+                    update(ref(db, "ActiveUserKeys/" + key), { locked: false }).then(function() {
+                        showToast("Key unlocked!");
+                        loadKeys();
+                    }).catch(function() { showToast("Error!", true); });
+                });
+            });
+        }
+        window.toggleKeyLock = toggleKeyLock;
+
+        function toggleBan(key, isPasswordOk) {
+            get(ref(db, "ActiveUserKeys/" + key)).then(function(snap) {
+                const data = snap.val() || {};
+                if (data.locked && !isPasswordOk) {
+                    requireLockPassword(function() { toggleBan(key, true); });
+                    return;
+                }
+                const banned = !data.banned;
+                update(ref(db, "ActiveUserKeys/" + key), { banned: banned }).then(function() {
+                    showToast(banned ? "Key banned!" : "Key unbanned!");
+                    loadKeys();
+                }).catch(function() { showToast("Error!", true); });
+            });
+        }
+        window.toggleBan = toggleBan;
+
+        function unbindDevice(key, deviceId, isPasswordOk) {
+            if ((window.lockMap && window.lockMap[key]) && !isPasswordOk) {
+                requireLockPassword(function() { unbindDevice(key, deviceId, true); });
+                return;
+            }
+            if (!confirm("Unbind device " + deviceId + " from this key? It can log in again only if unused.")) return;
+            const updates = {};
+            updates["ActiveUserKeys/" + key + "/boundDeviceId"] = "NONE";
+            updates["ActiveUserKeys/" + key + "/isUsed"] = false;
+            updates["ActiveUserKeys/" + key + "/boundDevices/" + deviceId] = null;
+            update(ref(db), updates).then(function() {
+                showToast("Device unbound!");
+                loadKeys();
+                if (window.deviceModalKey && document.getElementById("modalOverlay").classList.contains("show")) {
+                    showDevices(window.deviceModalKey);
+                }
+            }).catch(function() { showToast("Error!", true); });
+        }
+        window.unbindDevice = unbindDevice;
+
+        function editKey(key, isPasswordOk) {
+            get(ref(db, "ActiveUserKeys/" + key)).then(function(snap) {
+                const data = snap.val() || {};
+                if (data.locked && !isPasswordOk) {
+                    requireLockPassword(function() { editKey(key, true); });
+                    return;
+                }
+                const type = data.type || "Normal";
+                editTypeState = type;
+                editLimitState = parseInt(data.maxDevices, 10) || 0;
+                const dur = data.durationHours || 24;
+                const boundId = data.boundDeviceId && String(data.boundDeviceId) !== "NONE" && String(data.boundDeviceId) !== "none" ? String(data.boundDeviceId) : "";
+                const boundMap = data.boundDevices || {};
+                const allDeviceIds = [];
+                if (boundId) allDeviceIds.push(boundId);
+                Object.keys(boundMap).forEach(function(did) { if (did !== boundId) allDeviceIds.push(did); });
+                window.deviceCache[key] = allDeviceIds;
+                document.getElementById("modalBody").innerHTML =
+                    '<h3>Edit Key: ' + esc(key) + '</h3>' +
+                    '<div class="form-row"><div><label>User Name / Note</label><input type="text" id="mKeyNote" value="' + esc(data.note || data.name || "") + '"></div></div>' +
+                    '<div class="form-row"><div><label>Type</label><div class="custom-select">' +
+                    '<button type="button" class="cs-trigger" onclick="toggleEditTypeDropdown()">' +
+                    '<span class="cs-value" id="mTypeValue">' + esc(type) + '</span>' +
+                    '<span class="cs-arrow">▾</span></button>' +
+                    '<div class="cs-menu" id="mTypeMenu"></div></div></div></div>' +
+                    '<div class="form-row"><div><label>Duration (hours)</label><input type="number" id="mKeyDuration" value="' + dur + '" min="1"><div class="field-hint">Use <b>99999</b> for lifetime.</div></div></div>' +
+                    '<div class="form-row"><div><label>Device Limit</label><div class="custom-select">' +
+                    '<button type="button" class="cs-trigger" onclick="toggleEditLimitDropdown()">' +
+                    '<span class="cs-value" id="mLimitValue">' + esc(limitLabel(data.maxDevices)) + '</span>' +
+                    '<span class="cs-arrow">▾</span></button>' +
+                    '<div class="cs-menu" id="mLimitMenu"></div></div></div></div>' +
+                    (allDeviceIds.length ? '<div style="margin-bottom:14px;"><label>Bound Devices (' + allDeviceIds.length + ')</label>' +
+                        '<div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px;">' + allDeviceIds.slice(0, 5).map(deviceChip).join("") +
+                        (allDeviceIds.length > 5 ? '<span class="key-expiry">+' + (allDeviceIds.length - 5) + ' more</span>' : '') +
+                        '</div>' +
+                        '<button class="btn btn-small" onclick="showDevices(\'' + jsStr(key) + '\')">VIEW ALL DEVICES</button></div>' : '') +
+                    '<div style="display: flex; gap: 10px; justify-content: flex-end;">' +
+                    '<button class="btn btn-red btn-small" onclick="closeModal()">CANCEL</button>' +
+                    '<button class="btn btn-small" onclick="saveKeyEdit(\'' + jsStr(key) + '\')">SAVE</button></div>';
+                document.getElementById("modalOverlay").classList.add("show");
+            });
+        }
+        window.editKey = editKey;
+
+        function saveKeyEdit(key) {
+            const note = document.getElementById("mKeyNote").value.trim();
+            const type = editTypeState;
+            const durationHours = parseInt(document.getElementById("mKeyDuration").value, 10);
+            if (!durationHours || durationHours <= 0) { showToast("Duration must be > 0 hours!", true); return; }
+            update(ref(db, "ActiveUserKeys/" + key), { note: note, type: type, durationHours: durationHours, maxDevices: editLimitState }).then(function() {
+                showToast("Key updated!");
+                closeModal();
+                loadKeys();
+            }).catch(function() { showToast("Error!", true); });
+        }
+        window.saveKeyEdit = saveKeyEdit;
+
+        function deleteKey(key, isPasswordOk) {
+            get(ref(db, "ActiveUserKeys/" + key)).then(function(snap) {
+                const d = snap.val() || {};
+                if (d.locked && !isPasswordOk) {
+                    requireLockPassword(function() { deleteKey(key, true); });
+                    return;
+                }
+                if (!confirm("Delete key " + key + "?")) return;
+                remove(ref(db, "ActiveUserKeys/" + key)).then(function() {
+                    showToast("Key deleted!");
+                    loadKeys();
+                }).catch(function() { showToast("Error!", true); });
+            });
+        }
+        window.deleteKey = deleteKey;
+
+        function clearExpiredKeys() {
+            get(ref(db, "ActiveUserKeys")).then(function(snap) {
+                if (!snap.exists()) { showToast("No keys to clean!"); return; }
+                const keys = snap.val();
+                const now = Date.now();
+                const expired = [];
+                Object.keys(keys).forEach(function(key) {
+                    const data = keys[key] || {};
+                    const dur = data.durationHours;
+                    let isExpired = false;
+                    if (dur) {
+                        if (dur !== 99999 && data.createdAt > 0) isExpired = now > (data.createdAt + dur * 3600000);
+                    } else {
+                        isExpired = data.expiresAt > 0 && now > data.expiresAt;
+                    }
+                    if (isExpired) expired.push(key);
+                });
+                if (!expired.length) { showToast("No expired keys!"); return; }
+                if (!confirm("Delete " + expired.length + " expired key(s)?")) return;
+                const updates = {};
+                expired.forEach(function(key) { updates["ActiveUserKeys/" + key] = null; });
+                update(ref(db), updates).then(function() {
+                    showToast(expired.length + " expired key(s) deleted!");
+                    loadKeys();
+                }).catch(function() { showToast("Error!", true); });
+            }).catch(function() { showToast("Error loading keys!", true); });
+        }
+        window.clearExpiredKeys = clearExpiredKeys;
+
+        function closeModal() {
+            pendingLockAction = null;
+            window.deviceModalKey = "";
+            document.getElementById("modalOverlay").classList.remove("show");
+        }
+        window.closeModal = closeModal;
+
+        document.getElementById("modalOverlay").addEventListener("click", function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

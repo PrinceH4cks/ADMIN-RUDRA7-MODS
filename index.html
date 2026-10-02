@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUDRA7 MODS - LOGIN</title>
+        <link rel="stylesheet" href="css/style.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "firebase/app": "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js",
+            "firebase/analytics": "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js",
+            "firebase/auth": "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js",
+            "firebase/database": "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
+        }
+    }
+    </script>
+</head>
+<body class="login-body">
+    <div class="bg-decor"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="grid"></div></div>
+
+    <div class="login-card">
+        <span id="serverStatusDot" class="server-status-dot" role="status" aria-label="Checking server connection"></span>
+        <div class="logo"><svg class="svg-ic" viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8.5 11l2.5 2.5L15.5 8.5" stroke="#fde047" stroke-width="2.6"/></svg></div>
+        <h1>RUDRA7 MODS</h1>
+        <div class="sub">RUDRA7 MODS • Secure Admin Access</div>
+
+        <div class="error-msg" id="errorMsg"><svg class="svg-ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17.5v.5"/></svg> Invalid email or password!</div>
+
+        <form id="loginForm">
+            <div class="field">
+                <label>Email</label>
+                <div class="input-wrap">
+                    <span class="input-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#818cf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                    <input type="email" id="emailInput" placeholder="admin@example.com" autocomplete="email">
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Password</label>
+                <div class="input-wrap">
+                    <span class="input-ic"><svg class="svg-ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#fbbf24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.5 12.5 20 3M14 9l3 3M17.5 5.5l3 3"/></svg></span>
+<input type="text" id="passwordInput" placeholder="Password" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false">
+                    <button type="button" class="eye-toggle" id="eyeToggle" title="Show / hide password"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 19c-6.5 0-10-7-10-7a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c6.5 0 10 7 10 7a18.5 18.5 0 0 1-2.16 3.19M14.12 14.12a3 3 0 1 1-4.24-4.24"/><path d="M1 1l22 22"/></svg></button>
+                </div>
+            </div>
+
+            <label class="save-row">
+                <input type="checkbox" id="savePassInput" class="save-check">
+                <span class="save-box"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <span class="save-text"><svg class="svg-ic" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#34d399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Save Password</span>
+            </label>
+
+            <button type="submit" class="btn" id="loginBtn">
+                <span class="btn-text">LOGIN</span>
+                <span class="btn-spinner"></span>
+            </button>
+        </form>
+
+        <div class="login-support">
+            <div class="ls-title">Developer Support</div>
+            <div class="ls-row">
+                <a class="ls-btn tg" href="https://t.me/PRINCE_H4CKS" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                    <span>Telegram</span>
+                </a>
+                <a class="ls-btn wa" href="https://wa.me/917488739325" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="foot"><svg class="svg-ic" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Secure Admin Access Only</div>
+    </div>
+
+    <script type="module">
+        import { auth, db, ADMIN_UID } from "./js/firebase-config.js";
+        import { signInWithEmailAndPassword } from "firebase/auth";
+        import { onValue, ref } from "firebase/database";
+
+        const ALLOWED_UID = ADMIN_UID;
+        const serverStatusDot = document.getElementById("serverStatusDot");
+
+        function setServerStatus(isOnline) {
+            serverStatusDot.classList.toggle("online", isOnline);
+            serverStatusDot.setAttribute("aria-label", isOnline ? "Server connected" : "Server disconnected");
+            serverStatusDot.title = isOnline ? "Server connected" : "Server disconnected";
+        }
+
+        setServerStatus(false);
+        onValue(ref(db, ".info/connected"), function(snapshot) {
+            setServerStatus(snapshot.val() === true);
+        }, function() {
+            setServerStatus(false);
+        });
+
+        const eyeToggle = document.getElementById("eyeToggle");
+        const passwordInput = document.getElementById("passwordInput");
+        const EYE_SVG = '<svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>';
+        const EYE_OFF_SVG = '<svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 19c-6.5 0-10-7-10-7a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c6.5 0 10 7 10 7a18.5 18.5 0 0 1-2.16 3.19M14.12 14.12a3 3 0 1 1-4.24-4.24"/><path d="M1 1l22 22"/></svg>';
+        eyeToggle.addEventListener("click", function() {
+            const isPass = passwordInput.type === "password";
+            passwordInput.type = isPass ? "text" : "password";
+            eyeToggle.innerHTML = isPass ? EYE_OFF_SVG : EYE_SVG;
+        });
+
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById("emailInput").value.trim();
+            const password = passwordInput.value;
+            const errorMsg = document.getElementById("errorMsg");
+            const loginBtn = document.getElementById("loginBtn");
+
+            errorMsg.style.display = "none";
+            loginBtn.disabled = true;
+            loginBtn.classList.add("loading");
+            loginBtn.querySelector(".btn-text").innerText = "LOGGING IN";
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then(function(userCredential) {
+                    if (userCredential.user.uid !== ALLOWED_UID) {
+                        auth.signOut();
+                        errorMsg.style.display = "flex";
+                        loginBtn.disabled = false;
+                        loginBtn.classList.remove("loading");
+                        loginBtn.querySelector(".btn-text").innerText = "LOGIN";
+                        return;
+                    }
+                    if (document.getElementById("savePassInput").checked) {
+                        localStorage.setItem("adminSavedLogin", JSON.stringify({ email: email, password: password }));
+                    } else {
+                        localStorage.removeItem("adminSavedLogin");
+                    }
+                    sessionStorage.setItem("adminLoggedIn", "true");
+                    localStorage.setItem("adminLoginTime", String(Date.now()));
+                    window.location.href = "dashboard.html";
+                })
+                .catch(function() {
+                    errorMsg.style.display = "flex";
+                    loginBtn.disabled = false;
+                    loginBtn.classList.remove("loading");
+                    loginBtn.querySelector(".btn-text").innerText = "LOGIN";
+                });
+        });
+
+        (function() {
+            const saved = localStorage.getItem("adminSavedLogin");
+            if (saved) {
+                try {
+                    const s = JSON.parse(saved);
+                    if (s.email) document.getElementById("emailInput").value = s.email;
+                    if (s.password) document.getElementById("passwordInput").value = s.password;
+                    document.getElementById("savePassInput").checked = true;
+                } catch (e) { }
+            }
+        })();
+    </script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

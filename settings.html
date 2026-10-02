@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SETTINGS - ADMIN PANEL</title>
+        <link rel="stylesheet" href="css/style.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "firebase/app": "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js",
+            "firebase/analytics": "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js",
+            "firebase/auth": "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js",
+            "firebase/database": "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
+        }
+    }
+    </script>
+    <script>document.documentElement.className += " skel-pending";</script>
+</head>
+<body>
+
+    <div class="bg-decor"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="grid"></div></div>
+
+    <div id="pageSkeleton" class="is-hidden" aria-hidden="true">
+        <div class="skw-main">
+        <div class="skw-topbar">
+            <div class="skw skw-h1" style="width:96px"></div>
+            <div class="skw-topbar-right">
+                <div class="skw skw-chip"><div class="skw skw-av"></div><div class="skw skw-chip-txt"></div></div>
+                <div class="skw skw-exit"></div>
+            </div>
+        </div>
+            <div class="skw-card">
+                <div class="skw-card-head"><div class="skw skw-card-ic"></div><div class="skw skw-card-txt w150"></div></div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-btn-row"><div class="skw skw-btn" style="width:150px"></div></div>
+            </div>
+            <div class="skw-card">
+                <div class="skw-card-head"><div class="skw skw-card-ic"></div><div class="skw skw-card-txt w150"></div></div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-btn-row"><div class="skw skw-btn" style="width:150px"></div></div>
+            </div>
+            <div class="skw-card">
+                <div class="skw-card-head"><div class="skw skw-card-ic"></div><div class="skw skw-card-txt w150"></div></div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-btn-row"><div class="skw skw-btn" style="width:150px"></div></div>
+            </div>
+            <div class="skw-card">
+                <div class="skw-card-head"><div class="skw skw-card-ic"></div><div class="skw skw-card-txt w150"></div></div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-btn-row"><div class="skw skw-btn" style="width:150px"></div></div>
+            </div>
+            <div class="skw-card">
+                <div class="skw-card-head"><div class="skw skw-card-ic"></div><div class="skw skw-card-txt w150"></div></div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-btn-row"><div class="skw skw-btn" style="width:150px"></div></div>
+            </div>
+            <div class="skw-card">
+                <div class="skw-card-head"><div class="skw skw-card-ic"></div><div class="skw skw-card-txt w150"></div></div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-form-row">
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                    <div><div class="skw skw-label w94"></div><div class="skw skw-input"></div><div class="skw skw-hint"></div></div>
+                </div>
+                <div class="skw-btn-row"><div class="skw skw-btn" style="width:150px"></div></div>
+            </div>
+        </div>
+    </div>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="icon"><svg class="svg-ic" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8.5 11l2.5 2.5L15.5 8.5" stroke="#fde047" stroke-width="2.4"/></svg></div>
+            <div>
+                <div class="name">RUDRA7 MODS</div>
+                <div class="role">Admin Panel</div>
+            </div>
+        </div>
+
+        <div class="nav-item" data-view="overview"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span class="txt">Overview</span></div>
+        <div class="nav-item" data-view="keys"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.5 12.5 20 3M14 9l3 3M17.5 5.5l3 3"/></svg></span><span class="txt">User Keys</span></div>
+        <div class="nav-item" data-view="floating"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span><span class="txt">Floating Buttons</span></div>
+
+        <div class="nav-item" data-view="notifications"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><span class="txt">Notifications</span></div>
+        <div class="nav-item active" data-view="settings"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg></span><span class="txt">Settings</span><span class="nav-arrow">▾</span></div>
+        <div class="nav-sub" id="settingsSub">
+            <div class="nav-sub-item active" data-sub="general" onclick="switchSettingsTab('general')"><svg class="svg-ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2M9 10h6M9 14h6M9 18h4"/></svg> Site Settings</div>
+        </div>
+
+        <div class="side-user"><div class="su-av">A</div><div class="su-meta"><div class="su-label">Administrator</div><div class="su-email">admin@panel</div></div></div>
+        <button class="logout" id="logoutBtn">LOGOUT</button>
+    </aside>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mnav-group">
+        <div class="m-item" data-view="overview"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>Home</div>
+        <div class="m-item" data-view="keys"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.5 12.5 20 3M14 9l3 3M17.5 5.5l3 3"/></svg></span>Keys</div>
+        <div class="m-item" data-view="floating"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span>Float</div>
+        </div>
+        <span class="mnav-div"></span>
+        <div class="mnav-group nav-group-alt">
+
+        <div class="m-item" data-view="notifications"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>Notif</div>
+        <div class="m-item active" data-view="settings"><span class="ic"><svg class="svg-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg></span>Settings</div>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="topbar">
+            <h1 id="pageTitle">Settings</h1>
+            <div class="topbar-right">
+                <div class="user-chip" id="adminEmail"><span class="uc-av">A</span><span class="uc-name">Admin</span></div>
+                <button class="topbar-exit" onclick="document.getElementById('logoutBtn').click()"><svg class="svg-ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h5M15 16l4-4-4-4M19 12H9"/></svg> EXIT</button>
+            </div>
+        </div>
+
+        <div class="card settings-card" data-sec="general">
+            <h3>Site Settings</h3>
+            <div class="form-row">
+                <div>
+                    <label>App Name</label>
+                    <input type="text" id="setName" placeholder="PRINCE HACKS">
+                    <div class="field-hint">App name shown on the floating panel + login page.</div>
+                </div>
+                <div>
+                    <label>Edition</label>
+                    <input type="text" id="setEdition" placeholder="FREE FIRE EDITION">
+                    <div class="field-hint">Changes the 'Free Fire Edition' line in the app.</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label>Site Title</label>
+                    <input type="text" id="setTitle" placeholder="PRINCE HACKS">
+                </div>
+                <div>
+                    <label>Telegram Link</label>
+                    <input type="text" id="setTg" placeholder="https://t.me/...">
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label>WhatsApp Link</label>
+                    <input type="text" id="setWa" placeholder="https://whatsapp.com/channel/...">
+                </div>
+                <div>
+                    <label>Website Link</label>
+                    <input type="text" id="setWebsite" placeholder="https://yoursite.com">
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label>Find Password Button Link</label>
+                    <input type="text" id="setFindPass" placeholder="https://...">
+                </div>
+                <div></div>
+            </div>
+            <button class="btn" onclick="saveSiteSettings()">SAVE SETTINGS</button>
+        </div>
+
+        <div class="card settings-card" data-sec="general">
+            <h3>Maintenance Mode</h3>
+            <div class="form-row">
+                <div>
+                    <label>Status</label>
+                    <div class="switch-row">
+                        <label class="switch">
+                            <input type="checkbox" id="setMaintenance">
+                            <span class="slider"></span>
+                        </label>
+                        <span class="switch-status" id="maintenanceStatusText">OFF</span>
+                    </div>
+                </div>
+                <div>
+                    <label>Maintenance Heading / Text</label>
+                    <input type="text" id="setMaintText" placeholder="We are under maintenance, please try again later...">
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label>Button Label</label>
+                    <input type="text" id="setMaintLinkLabel" placeholder="e.g. CONTACT ADMIN">
+                </div>
+                <div>
+                    <label>Button Link</label>
+                    <input type="text" id="setMaintLink" placeholder="https://t.me/...">
+                </div>
+            </div>
+            <button class="btn" onclick="saveMaintenance()">SAVE MAINTENANCE</button>
+        </div>
+
+        <div class="card settings-card" data-sec="general">
+            <h3>Subscribe / Join Popup</h3>
+            <div class="form-row">
+                <div>
+                    <label>Popup Enabled</label>
+                    <div class="switch-row">
+                        <label class="switch">
+                            <input type="checkbox" id="setPopupEnabled">
+                            <span class="slider"></span>
+                        </label>
+                        <span class="switch-status" id="popupStatusText">OFF</span>
+                    </div>
+                </div>
+                <div>
+                    <label>Popup Title</label>
+                    <input type="text" id="setPopupTitle" placeholder="JOIN OUR COMMUNITY">
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label>Popup Text</label>
+                    <input type="text" id="setPopupText" placeholder="Subscribe and join us to get latest updates!">
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label>Button Label</label>
+                    <input type="text" id="setPopupBtnLabel" placeholder="e.g. SUBSCRIBE / JOIN">
+                </div>
+                <div>
+                    <label>Button Link</label>
+                    <input type="text" id="setPopupBtnLink" placeholder="https://t.me/...">
+                </div>
+            </div>
+            <button class="btn" onclick="savePopupSettings()">SAVE POPUP</button>
+        </div>
+
+        <div class="card settings-card" data-sec="general">
+            <h3>Force Subscribe / Redirect</h3>
+            <div class="form-row">
+                <div>
+                    <label>Force Redirect Enabled</label>
+                    <div class="switch-row">
+                        <label class="switch">
+                            <input type="checkbox" id="setForceRedirectEnabled">
+                            <span class="slider"></span>
+                        </label>
+                        <span class="switch-status" id="forceRedirectStatusText">OFF</span>
+                    </div>
+                    <div class="field-hint">When <b>ON</b>, every time the user opens the app it will automatically jump to the link below — no tap needed.</div>
+                </div>
+                <div>
+                    <label>Redirect Link</label>
+                    <input type="text" id="setForceRedirectLink" placeholder="https://t.me/...">
+                </div>
+            </div>
+            <button class="btn" onclick="saveForceRedirect()">SAVE FORCE REDIRECT</button>
+        </div>
+
+        <div class="card settings-card" data-sec="general">
+            <h3>Setup Video / Banner</h3>
+            <div class="form-row">
+                <div>
+                    <label>Banner Enabled</label>
+                    <div class="switch-row">
+                        <label class="switch">
+                            <input type="checkbox" id="setBannerEnabled">
+                            <span class="slider"></span>
+                        </label>
+                        <span class="switch-status" id="bannerStatusText">OFF</span>
+                    </div>
+                    <div class="field-hint">When <b>ON</b>, a photo banner with setup video link will show on the login page.</div>
+                </div>
+                <div>
+                    <label>Banner Image URL</label>
+                    <input type="text" id="setBannerUrl" placeholder="https://i.imgur.com/abc123.png">
+                    <div class="field-hint">Direct image link (jpg/png). Banner size <b>16:9 ratio</b> recommended. Example: imgur direct link.</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label>Setup Video Link</label>
+                    <input type="text" id="setSetupVideoLink" placeholder="https://youtube.com/watch?v=...">
+                    <div class="field-hint">YouTube / any video link. User will be redirected when they tap the banner play button.</div>
+                </div>
+            </div>
+            <button class="btn" onclick="saveSetupBanner()">SAVE BANNER</button>
+            <div id="bannerPreview" style="margin-top:12px; display:none; border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+                <img id="bannerPreviewImg" style="width:100%; max-height:200px; object-fit:cover; display:block;" alt="Banner Preview">
+            </div>
+        </div>
+
+        <div class="card settings-card" data-sec="general">
+            <h3>App Update / Version Push</h3>
+            <div class="form-row">
+                <div>
+                    <label>Latest Version (number)</label>
+                    <input type="number" id="setUpdateLatest" min="1" placeholder="e.g. 2">
+                    <div class="field-hint">Enter a number higher than the app's current version. Example: app is v1, enter 2 — v1 users get the update.</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label>Version Name (line)</label>
+                    <input type="text" id="setUpdateVersionName" placeholder="e.g. v2.0">
+                </div>
+                <div>
+                    <label>Update Type</label>
+                    <select id="setUpdateType">
+                        <option value="link">Link (opens in browser)</option>
+                        <option value="apk">Direct (download + install in app)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label>Update Link</label>
+                    <input type="text" id="setUpdateLink" placeholder="https://... (link or direct APK url)">
+                    <div class="field-hint"><b>Link type:</b> mediafire page or any link. <b>Direct type:</b> APK <u>direct download</u> URL (not the mediafire page) — otherwise download fails.</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label>Update Note (line)</label>
+                    <input type="text" id="setUpdateNote" placeholder="e.g. Bug fixes + new features">
+                </div>
+            </div>
+            <button class="btn" onclick="saveAppUpdate()">PUSH UPDATE</button>
+            <p class="card-sub" style="margin-top:8px;">Note: Always raise the <b>Latest Version number</b>. PUSH sends the update to all users instantly. To stop it, push the same or a lower number (e.g. 1) — the update stops.</p>
+            <div id="appUpdateLiveBox" style="margin-top:12px; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel-2);">
+                <div style="font-size:12px; letter-spacing:.5px; color:var(--muted); margin-bottom:6px;">CURRENTLY RUNNING UPDATE</div>
+                <div id="appUpdateLiveInfo" style="color:var(--text); font-size:13px; line-height:1.5;">Loading...</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <a href="developer.html" class="dev-fab" title="Developer Support"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+
+    <script type="module">
+        import { auth, db } from "./js/firebase-config.js";
+        import { onAuthStateChanged, signOut } from "firebase/auth";
+        import { ref, get, set, update } from "firebase/database";
+
+        window.auth = auth;
+        window.db = db;
+        window.signOut = signOut;
+        window.ref = ref;
+        window.get = get;
+        window.update = update;
+
+        function applyAdminChip() {
+            const el = document.querySelector("#adminEmail .uc-name");
+            const isMobile = window.matchMedia("(max-width: 900px)").matches || window.matchMedia("(pointer: coarse)").matches;
+            if (el) el.innerText = isMobile ? "Admin" : (window.adminEmailAddr || "");
+        }
+        window.applyAdminChip = applyAdminChip;
+        window.addEventListener("resize", applyAdminChip);
+
+        onAuthStateChanged(auth, function(user) {
+            if (!user) {
+                window.location.href = "index.html";
+                return;
+            }
+            const loginTime = parseInt(localStorage.getItem("adminLoginTime") || "0", 10);
+            if (!loginTime) {
+                localStorage.setItem("adminLoginTime", String(Date.now()));
+            } else if (Date.now() - loginTime > 24 * 60 * 60 * 1000) {
+                signOut(auth).then(function() {
+                    sessionStorage.removeItem("adminLoggedIn");
+                    localStorage.removeItem("adminLoginTime");
+                    window.location.href = "index.html";
+                });
+                return;
+            }
+            window.adminEmailAddr = user.email;
+            applyAdminChip();
+            loadSiteSettings();
+            loadAppUpdate();
+            loadSetupBanner();
+        });
+
+        document.getElementById("logoutBtn").addEventListener("click", function() {
+            signOut(auth).then(function() {
+                sessionStorage.removeItem("adminLoggedIn");
+                window.location.href = "index.html";
+            });
+        });
+
+        document.querySelectorAll(".nav-item, .m-item").forEach(function(item) {
+            item.addEventListener("click", function() {
+                var view = item.dataset.view;
+                if (view === "logout") {
+                    document.getElementById("logoutBtn").click();
+                    return;
+                }
+                if (view === "settings") return;
+                if (view === "floating") {
+                    window.location.href = "floating.html";
+                    return;
+                }
+                if (view === "keys") {
+                    window.location.href = "keys.html";
+                    return;
+                }
+                if (view === "notifications") {
+                    window.location.href = "notifications.html";
+                    return;
+                }
+                window.location.href = "dashboard.html?view=" + view;
+            });
+        });
+
+        function showToast(msg, isError) {
+            const toast = document.getElementById("toast");
+            toast.innerText = msg;
+            toast.className = "toast" + (isError ? " error" : "");
+            toast.style.display = "flex";
+            toast.style.animation = "none";
+            void toast.offsetWidth;
+            toast.style.animation = "";
+            setTimeout(function() { toast.style.display = "none"; }, 2600);
+        }
+        window.showToast = showToast;
+
+        function loadSiteSettings() {
+            get(ref(db, "siteSettings")).then(function(snap) {
+                window.markSkeletonSettled && window.markSkeletonSettled();
+                if (!snap.exists()) return;
+                const s = snap.val();
+                if (s.name) document.getElementById("setName").value = s.name;
+                if (s.edition) document.getElementById("setEdition").value = s.edition;
+                if (s.title) document.getElementById("setTitle").value = s.title;
+                if (s.tgLink) document.getElementById("setTg").value = s.tgLink;
+                if (s.waLink) document.getElementById("setWa").value = s.waLink;
+                if (s.findPassLink) document.getElementById("setFindPass").value = s.findPassLink;
+                if (s.websiteLink) document.getElementById("setWebsite").value = s.websiteLink;
+                if (typeof s.maintenance === "boolean") {
+                    document.getElementById("setMaintenance").checked = s.maintenance;
+                    document.getElementById("maintenanceStatusText").innerText = s.maintenance ? "ON" : "OFF";
+                }
+                if (s.maintenanceText) document.getElementById("setMaintText").value = s.maintenanceText;
+                if (s.maintenanceLinkLabel) document.getElementById("setMaintLinkLabel").value = s.maintenanceLinkLabel;
+                if (s.maintenanceLink) document.getElementById("setMaintLink").value = s.maintenanceLink;
+                if (typeof s.popupEnabled === "boolean") {
+                    document.getElementById("setPopupEnabled").checked = s.popupEnabled;
+                    document.getElementById("popupStatusText").innerText = s.popupEnabled ? "ON" : "OFF";
+                }
+                if (s.popupTitle) document.getElementById("setPopupTitle").value = s.popupTitle;
+                if (s.popupText) document.getElementById("setPopupText").value = s.popupText;
+                if (s.popupBtnLabel) document.getElementById("setPopupBtnLabel").value = s.popupBtnLabel;
+                if (s.popupBtnLink) document.getElementById("setPopupBtnLink").value = s.popupBtnLink;
+                if (typeof s.forceRedirectEnabled === "boolean") {
+                    document.getElementById("setForceRedirectEnabled").checked = s.forceRedirectEnabled;
+                    document.getElementById("forceRedirectStatusText").innerText = s.forceRedirectEnabled ? "ON" : "OFF";
+                }
+                if (s.forceRedirectLink) document.getElementById("setForceRedirectLink").value = s.forceRedirectLink;
+            }).catch(function() { });
+        }
+        window.loadSiteSettings = loadSiteSettings;
+
+        function saveSiteSettings() {
+            const data = {
+                name: document.getElementById("setName").value.trim(),
+                edition: document.getElementById("setEdition").value.trim(),
+                title: document.getElementById("setTitle").value.trim(),
+                tgLink: document.getElementById("setTg").value.trim(),
+                waLink: document.getElementById("setWa").value.trim(),
+                findPassLink: document.getElementById("setFindPass").value.trim(),
+                websiteLink: document.getElementById("setWebsite").value.trim()
+            };
+            update(ref(db, "siteSettings"), data).then(function() {
+                showToast("Site settings saved!");
+            }).catch(function() { showToast("Error saving settings!", true); });
+        }
+        window.saveSiteSettings = saveSiteSettings;
+
+        function switchSettingsTab(tab) {
+            document.querySelectorAll(".settings-card").forEach(function(c) {
+                c.style.display = (c.dataset.sec === tab) ? "" : "none";
+            });
+        }
+        window.switchSettingsTab = switchSettingsTab;
+
+        switchSettingsTab("general");
+
+        function saveMaintenance() {
+            const data = {
+                maintenance: document.getElementById("setMaintenance").checked,
+                maintenanceText: document.getElementById("setMaintText").value.trim(),
+                maintenanceLinkLabel: document.getElementById("setMaintLinkLabel").value.trim(),
+                maintenanceLink: document.getElementById("setMaintLink").value.trim()
+            };
+            update(ref(db, "siteSettings"), data).then(function() {
+                document.getElementById("maintenanceStatusText").innerText = data.maintenance ? "ON" : "OFF";
+                showToast(data.maintenance ? "Maintenance mode ON!" : "Maintenance mode OFF!");
+            }).catch(function() { showToast("Error saving maintenance!", true); });
+        }
+        window.saveMaintenance = saveMaintenance;
+
+        function savePopupSettings() {
+            const data = {
+                popupEnabled: document.getElementById("setPopupEnabled").checked,
+                popupTitle: document.getElementById("setPopupTitle").value.trim(),
+                popupText: document.getElementById("setPopupText").value.trim(),
+                popupBtnLabel: document.getElementById("setPopupBtnLabel").value.trim(),
+                popupBtnLink: document.getElementById("setPopupBtnLink").value.trim()
+            };
+            update(ref(db, "siteSettings"), data).then(function() {
+                document.getElementById("popupStatusText").innerText = data.popupEnabled ? "ON" : "OFF";
+                showToast(data.popupEnabled ? "Popup enabled!" : "Popup disabled!");
+            }).catch(function() { showToast("Error saving popup!", true); });
+        }
+        window.savePopupSettings = savePopupSettings;
+
+        function saveForceRedirect() {
+            const data = {
+                forceRedirectEnabled: document.getElementById("setForceRedirectEnabled").checked,
+                forceRedirectLink: document.getElementById("setForceRedirectLink").value.trim()
+            };
+            update(ref(db, "siteSettings"), data).then(function() {
+                document.getElementById("forceRedirectStatusText").innerText = data.forceRedirectEnabled ? "ON" : "OFF";
+                showToast(data.forceRedirectEnabled ? "Force redirect enabled!" : "Force redirect disabled!");
+            }).catch(function() { showToast("Error saving force redirect!", true); });
+        }
+        window.saveForceRedirect = saveForceRedirect;
+
+        function renderAppUpdateLive(u) {
+            const box = document.getElementById("appUpdateLiveBox");
+            const info = document.getElementById("appUpdateLiveInfo");
+            const isLive = !!u && u.enabled === true && (parseInt(u.latestVersion) || 0) > 0;
+            const name = (u && u.versionName) || ("v" + (u && u.latestVersion ? u.latestVersion : "?"));
+            const num = u ? (parseInt(u.latestVersion) || 0) : 0;
+            if (isLive) {
+                box.style.borderColor = "var(--green)";
+                info.innerHTML =
+                    "<span style='color:var(--green); font-weight:600;'>● LIVE — " + name + "</span><br>" +
+                    "Version number: <b>" + num + "</b> | Type: <b>" + (u.updateType === "apk" ? "Direct (in-app download)" : "Link (browser)") + "</b><br>" +
+                    (u.updateNote ? "Note: " + u.updateNote + "<br>" : "") +
+                    "<span style='color:var(--muted); word-break:break-all;'>" + (u.updateLink || "") + "</span>";
+            } else {
+                box.style.borderColor = "var(--border)";
+                info.innerHTML = "<span style='color:var(--red); font-weight:600;'>● NO UPDATE RUNNING</span><br><span style='color:var(--muted);'>No update is running now — all users are on their current version.</span>";
+            }
+        }
+        window.renderAppUpdateLive = renderAppUpdateLive;
+
+        function loadAppUpdate() {
+            get(ref(db, "appUpdate")).then(function(snap) {
+                const u = snap.exists() ? snap.val() : null;
+                renderAppUpdateLive(u);
+                if (!u) return;
+                if (u.latestVersion) document.getElementById("setUpdateLatest").value = u.latestVersion;
+                if (u.versionName) document.getElementById("setUpdateVersionName").value = u.versionName;
+                if (u.updateType) document.getElementById("setUpdateType").value = u.updateType;
+                if (u.updateLink) document.getElementById("setUpdateLink").value = u.updateLink;
+                if (u.updateNote) document.getElementById("setUpdateNote").value = u.updateNote;
+            }).catch(function() { });
+        }
+        window.loadAppUpdate = loadAppUpdate;
+
+        function saveAppUpdate() {
+            const num = parseInt(document.getElementById("setUpdateLatest").value) || 0;
+            const verName = document.getElementById("setUpdateVersionName").value.trim() || ("v" + (num || "?"));
+            const typeVal = document.getElementById("setUpdateType").value;
+            const link = document.getElementById("setUpdateLink").value.trim();
+            const note = document.getElementById("setUpdateNote").value.trim();
+            if (num <= 0) { showToast("Enter the Latest Version number first!", true); return; }
+            if (!link) { showToast("Update Link is required!", true); return; }
+            const ok = confirm(
+                "Confirm push for this update?\n\n" +
+                "Version: " + verName + " (number " + num + ")\n" +
+                "Type: " + (typeVal === "apk" ? "DIRECT — download + install in app" : "LINK — opens in browser") + "\n" +
+                "Link: " + link + "\n\n" +
+                "This update reaches ALL USERS instantly. Press CANCEL if the number is wrong."
+            );
+            if (!ok) return;
+            const data = {
+                enabled: true,
+                latestVersion: num,
+                versionName: document.getElementById("setUpdateVersionName").value.trim(),
+                updateType: typeVal,
+                updateLink: link,
+                updateNote: note
+            };
+            set(ref(db, "appUpdate"), data).then(function() {
+                renderAppUpdateLive(data);
+                showToast("Update pushed to users!");
+            }).catch(function() { showToast("Error saving update!", true); });
+        }
+        window.saveAppUpdate = saveAppUpdate;
+
+
+        document.getElementById("setMaintenance").addEventListener("change", function() {
+            document.getElementById("maintenanceStatusText").innerText = this.checked ? "ON" : "OFF";
+        });
+        document.getElementById("setPopupEnabled").addEventListener("change", function() {
+            document.getElementById("popupStatusText").innerText = this.checked ? "ON" : "OFF";
+        });
+        document.getElementById("setForceRedirectEnabled").addEventListener("change", function() {
+            document.getElementById("forceRedirectStatusText").innerText = this.checked ? "ON" : "OFF";
+        });
+        document.getElementById("setBannerEnabled").addEventListener("change", function() {
+            document.getElementById("bannerStatusText").innerText = this.checked ? "ON" : "OFF";
+        });
+
+        function loadSetupBanner() {
+            get(ref(db, "siteSettings")).then(function(snap) {
+                if (!snap.exists()) return;
+                const s = snap.val();
+                if (typeof s.setupBannerEnabled === "boolean") {
+                    document.getElementById("setBannerEnabled").checked = s.setupBannerEnabled;
+                    document.getElementById("bannerStatusText").innerText = s.setupBannerEnabled ? "ON" : "OFF";
+                }
+                if (s.setupBannerUrl) document.getElementById("setBannerUrl").value = s.setupBannerUrl;
+                if (s.setupVideoLink) document.getElementById("setSetupVideoLink").value = s.setupVideoLink;
+                if (s.setupBannerUrl) {
+                    document.getElementById("bannerPreview").style.display = "block";
+                    document.getElementById("bannerPreviewImg").src = s.setupBannerUrl;
+                }
+            }).catch(function() { });
+        }
+
+        function saveSetupBanner() {
+            const data = {
+                setupBannerEnabled: document.getElementById("setBannerEnabled").checked,
+                setupBannerUrl: document.getElementById("setBannerUrl").value.trim(),
+                setupVideoLink: document.getElementById("setSetupVideoLink").value.trim()
+            };
+            update(ref(db, "siteSettings"), data).then(function() {
+                document.getElementById("bannerStatusText").innerText = data.setupBannerEnabled ? "ON" : "OFF";
+                if (data.setupBannerUrl) {
+                    document.getElementById("bannerPreview").style.display = "block";
+                    document.getElementById("bannerPreviewImg").src = data.setupBannerUrl;
+                } else {
+                    document.getElementById("bannerPreview").style.display = "none";
+                }
+                showToast("Setup banner saved!");
+            }).catch(function() { showToast("Error saving banner!", true); });
+        }
+        window.saveSetupBanner = saveSetupBanner;
+    </script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>
