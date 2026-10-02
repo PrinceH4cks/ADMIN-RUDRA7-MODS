@@ -1,0 +1,49 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "siteSettings": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "categories": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "posts": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "floatingButtons": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "appUpdate": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "ActiveUserKeys": {
+      ".read": true,
+      ".write": true,
+      "$key": {
+        ".read": true,
+        ".write": true,
+        "boundDevices": {
+          ".write": true
+        }
+      }
+    },
+    "BannedDevices": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "users": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "deviceRegistry": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    }
+  }
+}

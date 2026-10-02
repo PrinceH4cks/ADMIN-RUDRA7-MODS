@@ -1,0 +1,60 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "siteSettings": {
+      ".read": true,
+      ".write": "auth != null && auth.uid === 'wtaaxfIvBgY0hWkLUeAoomgoZMP2'"
+    },
+    "panelSettings": {
+      ".read": "auth != null && auth.uid === 'wtaaxfIvBgY0hWkLUeAoomgoZMP2'",
+      ".write": "auth != null && auth.uid === 'wtaaxfIvBgY0hWkLUeAoomgoZMP2'"
+    },
+    "categories": {
+      ".read": true,
+      ".write": "auth != null && auth.uid === 'wtaaxfIvBgY0hWkLUeAoomgoZMP2'"
+    },
+    "posts": {
+      ".read": true,
+      ".write": "auth != null && auth.uid === 'wtaaxfIvBgY0hWkLUeAoomgoZMP2'"
+    },
+    "floatingButtons": {
+      ".read": true,
+      ".write": "auth != null && auth.uid === 'wtaaxfIvBgY0hWkLUeAoomgoZMP2'"
+    },
+    "notifications": {
+      ".read": true,
+      ".write": "auth != null && auth.uid === 'wtaaxfIvBgY0hWkLUeAoomgoZMP2'"
+    },
+    "appUpdate": {
+      ".read": true,
+      ".write": "auth != null && auth.uid === 'wtaaxfIvBgY0hWkLUeAoomgoZMP2'"
+    },
+    "ActiveUserKeys": {
+      ".read": "auth != null",
+      ".write": "auth != null && auth.uid === 'wtaaxfIvBgY0hWkLUeAoomgoZMP2'",
+      "$key": {
+        ".read": true,
+        ".write": "auth != null && auth.uid === 'wtaaxfIvBgY0hWkLUeAoomgoZMP2'",
+        "boundDeviceId": {
+          ".write": true
+        },
+        "boundDevices": {
+          ".write": true
+        }
+      }
+    },
+    "BannedDevices": {
+      ".read": "auth != null && auth.uid === 'wtaaxfIvBgY0hWkLUeAoomgoZMP2'",
+      ".write": "auth != null && auth.uid === 'wtaaxfIvBgY0hWkLUeAoomgoZMP2'"
+    },
+    "users": {
+      ".read": "auth != null && auth.uid === 'wtaaxfIvBgY0hWkLUeAoomgoZMP2'",
+      ".write": "auth != null && auth.uid === 'wtaaxfIvBgY0hWkLUeAoomgoZMP2'"
+    },
+    "deviceRegistry": {
+      ".read": "auth != null && auth.uid === 'wtaaxfIvBgY0hWkLUeAoomgoZMP2'",
+      ".write": "auth != null && auth.uid === 'wtaaxfIvBgY0hWkLUeAoomgoZMP2'"
+    }
+  }
+}
